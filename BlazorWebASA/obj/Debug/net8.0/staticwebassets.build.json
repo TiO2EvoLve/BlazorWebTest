@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "94JbfcSJR2+cRAvpogR6HtgIpOcmlS4PKiXmyrk6cso=",
+  "Hash": "dNrWl2xzoMNIJ+7WNaQaOJQGey0NX+DVa5uW3M+rWLo=",
   "Source": "BlazorWebASA",
   "BasePath": "/",
   "Mode": "Root",
@@ -109,7 +109,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.8\\runtimes\\browser-wasm\\native\\dotnet.js"
+      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.13\\runtimes\\browser-wasm\\native\\dotnet.js"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
@@ -128,15 +128,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.8\\runtimes\\browser-wasm\\native\\dotnet.js.map"
+      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.13\\runtimes\\browser-wasm\\native\\dotnet.js.map"
     },
     {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.8.o9re7w5mnj.js",
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.13.dlqouhdvc8.js",
       "SourceId": "BlazorWebASA",
       "SourceType": "Computed",
       "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.8.o9re7w5mnj.js",
+      "RelativePath": "_framework/dotnet.native.8.0.13.dlqouhdvc8.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,7 +147,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.8\\runtimes\\browser-wasm\\native\\dotnet.native.js"
+      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.13\\runtimes\\browser-wasm\\native\\dotnet.native.js"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
@@ -166,15 +166,15 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.8\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
+      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.13\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
     },
     {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.8.c4sa33e7zu.js",
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.13.gq36gzhxvv.js",
       "SourceId": "BlazorWebASA",
       "SourceType": "Computed",
       "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.8.c4sa33e7zu.js",
+      "RelativePath": "_framework/dotnet.runtime.8.0.13.gq36gzhxvv.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -185,7 +185,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.8\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
+      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.13\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
@@ -204,7 +204,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.8\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
+      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.13\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
@@ -223,7 +223,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.8\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
+      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.13\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
@@ -242,7 +242,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.8\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
+      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.13\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
@@ -261,7 +261,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.8\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+      "OriginalItemSpec": "C:\\Users\\32901\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.13\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.wasm",
@@ -4254,6 +4254,25 @@
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.wasm"
     },
     {
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\2rwobnjkre.gz",
+      "SourceId": "BlazorWebASA",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
+    },
+    {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\2vkvmfy65w.gz",
       "SourceId": "BlazorWebASA",
       "SourceType": "Computed",
@@ -4271,25 +4290,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.StackTrace.wasm"
-    },
-    {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\2whpnjizpy.gz",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\33ud8v36ld.gz",
@@ -4482,25 +4482,6 @@
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Extensions.DependencyInjection.wasm"
     },
     {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\44wb16is3t.gz",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.wasm.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
-    },
-    {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\4aelizyu5g.gz",
       "SourceId": "BlazorWebASA",
       "SourceType": "Computed",
@@ -4518,6 +4499,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.Cryptography.X509Certificates.wasm"
+    },
+    {
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\4aspsh066p.gz",
+      "SourceId": "BlazorWebASA",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\4bmdmzubp5.gz",
@@ -4765,6 +4765,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.wasm"
+    },
+    {
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\7j7gbqadkl.gz",
+      "SourceId": "BlazorWebASA",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\7o7mj14zpx.gz",
@@ -5128,6 +5147,25 @@
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ComponentModel.EventBasedAsync.wasm"
     },
     {
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\bjlztsct8a.gz",
+      "SourceId": "BlazorWebASA",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
+    },
+    {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\breykifumf.gz",
       "SourceId": "BlazorWebASA",
       "SourceType": "Computed",
@@ -5183,25 +5221,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Private.CoreLib.wasm"
-    },
-    {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\c4sa33e7zu.gz",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.8.c4sa33e7zu.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.8.c4sa33e7zu.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.8.c4sa33e7zu.js"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\cbhdf3vozf.gz",
@@ -5356,6 +5375,25 @@
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.Cryptography.Cng.wasm"
     },
     {
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\dlqouhdvc8.gz",
+      "SourceId": "BlazorWebASA",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.8.0.13.dlqouhdvc8.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.13.dlqouhdvc8.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.13.dlqouhdvc8.js"
+    },
+    {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\do3gbzl2et.gz",
       "SourceId": "BlazorWebASA",
       "SourceType": "Computed",
@@ -5449,44 +5487,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Drawing.Primitives.wasm"
-    },
-    {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\e5pilygjds.gz",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
-    },
-    {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\ehngyzjlk9.gz",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\epjo90tzcw.gz",
@@ -5753,6 +5753,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Transactions.wasm"
+    },
+    {
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\gq36gzhxvv.gz",
+      "SourceId": "BlazorWebASA",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.8.0.13.gq36gzhxvv.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.13.gq36gzhxvv.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.13.gq36gzhxvv.js"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\gr3r8621x7.gz",
@@ -6325,6 +6344,25 @@
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.Serialization.wasm"
     },
     {
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\mcv3sfiadn.gz",
+      "SourceId": "BlazorWebASA",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
+    },
+    {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\melxbpy8br.gz",
       "SourceId": "BlazorWebASA",
       "SourceType": "Computed",
@@ -6515,25 +6553,6 @@
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Formats.Tar.wasm"
     },
     {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\o9re7w5mnj.gz",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.8.o9re7w5mnj.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.8.o9re7w5mnj.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.8.o9re7w5mnj.js"
-    },
-    {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\oqk15icviu.gz",
       "SourceId": "BlazorWebASA",
       "SourceType": "Computed",
@@ -6627,6 +6646,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.wasm"
+    },
+    {
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\pektptftfo.gz",
+      "SourceId": "BlazorWebASA",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\pkmo0vjdw6.gz",
@@ -7332,6 +7370,25 @@
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.ThreadPool.wasm"
     },
     {
+      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\wez1vwti5t.gz",
+      "SourceId": "BlazorWebASA",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
+    },
+    {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\wh0wlqmllb.gz",
       "SourceId": "BlazorWebASA",
       "SourceType": "Computed",
@@ -7349,25 +7406,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.Intrinsics.wasm"
-    },
-    {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\wnd2n7vhhc.gz",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\wopa346jyp.gz",
@@ -7425,25 +7463,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.Serialization.Formatters.wasm"
-    },
-    {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\x43hlehml9.gz",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\xbafryjsn0.gz",
@@ -7596,25 +7615,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.Serialization.Json.wasm"
-    },
-    {
-      "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\yjmxpugi7b.gz",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\Debug\\net8.0\\compressed\\yo1mktr5tj.gz",
