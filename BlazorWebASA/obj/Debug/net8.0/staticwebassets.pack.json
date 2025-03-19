@@ -29,10 +29,6 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\sample-data\\weather.json",
-      "PackagePath": "staticwebassets\\sample-data\\weather.json"
-    },
-    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BlazorWebASA.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PaOFOBfxowGtLUceJ0KN3kslUmPqu/O+tMB1Ur9+xRY=",
+  "Hash": "pCw8U4Mx7HRnX8UfNKz0zsWklBdIg+BACibJIA6gi7w=",
   "Source": "BlazorWebASA",
   "BasePath": "/",
   "Mode": "Root",
@@ -10351,25 +10351,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
-    },
-    {
-      "Identity": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\sample-data\\weather.json",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "sample-data/weather.json",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\sample-data\\weather.json"
     }
   ]
 }

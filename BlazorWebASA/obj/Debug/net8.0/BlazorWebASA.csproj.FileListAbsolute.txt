@@ -1890,7 +1890,6 @@ D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\staticwebassets\msbuil
 D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BlazorWebASA.props
 D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\staticwebassets.pack.json
 D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\scopedcss\Layout\MainLayout.razor.rz.scp.css
-D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\scopedcss\Layout\NavMenu.razor.rz.scp.css
 D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\scopedcss\bundle\BlazorWebASA.styles.css
 D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\scopedcss\projectbundle\BlazorWebASA.bundle.scp.css
 D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\compressed\doqmk7b9y7.gz
