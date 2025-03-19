@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\BlazorWebASA.csproj": {}
+    "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\BlazorWebASA.csproj": {}
   },
   "projects": {
-    "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\BlazorWebASA.csproj": {
+    "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\BlazorWebASA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\BlazorWebASA.csproj",
+        "projectUniqueName": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\BlazorWebASA.csproj",
         "projectName": "BlazorWebASA",
-        "projectPath": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\BlazorWebASA.csproj",
+        "projectPath": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\BlazorWebASA.csproj",
         "packagesPath": "C:\\Users\\32901\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\C#\\BlazorWebASA\\BlazorWebASA\\obj\\",
+        "outputPath": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\32901\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BootstrapBlazor": {
+              "target": "Package",
+              "version": "[9.4.9, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -55,13 +59,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.13, )",
+              "version": "[8.0.14, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.13, )",
+              "version": "[8.0.14, )",
               "autoReferenced": true
             }
           },
@@ -79,7 +83,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.13, 8.0.13]"
+              "version": "[8.0.14, 8.0.14]"
             }
           ],
           "frameworkReferences": {
@@ -87,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
