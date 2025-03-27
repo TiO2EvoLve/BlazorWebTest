@@ -2111,3 +2111,4 @@ D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\BlazorWebASA.dll
 D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\refint\BlazorWebASA.dll
 D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\BlazorWebASA.pdb
 D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\ref\BlazorWebASA.dll
+D:\Project\C#\BlazorWebTest\BlazorWebASA\obj\Debug\net8.0\scopedcss\Pages\Home.razor.rz.scp.css

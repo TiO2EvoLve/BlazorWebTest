@@ -1,18 +1,6 @@
-/* /Layout/MainLayout.razor.rz.scp.css */
-.page[b-ipb3jv30eq] {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-main[b-ipb3jv30eq] {
-    flex: 1;
-}
-
-/* /Pages/Home.razor.rz.scp.css */
-
+﻿
 /* 保持原有背景样式 */
-.background[b-f2bz8d6fvp] {
+.background {
     position: fixed;
     top: 0;
     left: 0;
@@ -22,13 +10,13 @@ main[b-ipb3jv30eq] {
     filter: blur(100px);
 }
 
-.ball[b-f2bz8d6fvp] {
+.ball {
     position: absolute;
     border-radius: 50%;
 }
 
 /* 新增导航栏 */
-.navbar1[b-f2bz8d6fvp] {
+.navbar1 {
     position: fixed;
     top: 0;
     width: 100%;
@@ -39,7 +27,7 @@ main[b-ipb3jv30eq] {
     z-index: 1000;
 }
 
-.nav-link1[b-f2bz8d6fvp] {
+.nav-link1 {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -48,19 +36,19 @@ main[b-ipb3jv30eq] {
     padding: 0;
 }
 
-.nav-link1 a[b-f2bz8d6fvp] {
+.nav-link1 a {
     color: #333;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
 
-.nav-link1 a:hover[b-f2bz8d6fvp] {
+.nav-link1 a:hover {
     color: #fa60a0;
 }
 
 /* 主内容容器 */
-.container[b-f2bz8d6fvp] {
+.container {
     display: flex;
     gap: 2rem;
     max-width: 1200px;
@@ -69,12 +57,12 @@ main[b-ipb3jv30eq] {
 }
 
 /* 主内容区 */
-.main-content[b-f2bz8d6fvp] {
+.main-content {
     flex: 3;
 }
 
 /* 侧边栏 */
-.sidebar[b-f2bz8d6fvp] {
+.sidebar {
     flex: 1;
     background: rgba(255, 255, 255, 0.8);
     padding: 1.5rem;
@@ -84,7 +72,7 @@ main[b-ipb3jv30eq] {
 }
 
 /* 卡片样式扩展 */
-.card[b-f2bz8d6fvp] {
+.card {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 2rem;
     border-radius: 15px;
@@ -93,14 +81,14 @@ main[b-ipb3jv30eq] {
     backdrop-filter: blur(5px);
 }
 
-.profile-card[b-f2bz8d6fvp] {
+.profile-card {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 2rem;
 }
 
-.profile-pic[b-f2bz8d6fvp] {
+.profile-pic {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -109,7 +97,7 @@ main[b-ipb3jv30eq] {
 }
 
 /* 文章样式 */
-.post-date[b-f2bz8d6fvp] {
+.post-date {
     color: #666;
     font-size: 0.9rem;
     margin: 0.5rem 0;
@@ -117,16 +105,16 @@ main[b-ipb3jv30eq] {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-    .container[b-f2bz8d6fvp] {
+    .container {
         flex-direction: column;
         padding: 1rem;
     }
 
-    .navbar[b-f2bz8d6fvp] {
+    .navbar {
         padding: 0.5rem;
     }
 
-    .nav-links[b-f2bz8d6fvp] {
+    .nav-links {
         gap: 1rem;
     }
 }

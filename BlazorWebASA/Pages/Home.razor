@@ -1,46 +1,74 @@
 ﻿@page "/"
 
-<Row ItemsPerRow="ItemsPerRow.Three">
-    <Card>
-        <BodyTemplate>
-            <h5 class="card-title">Card 1</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </BodyTemplate>
-    </Card>
-    <Card>
-        <BodyTemplate>
-            <h5 class="card-title">Card 2</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </BodyTemplate>
-    </Card>
-    <Card>
-        <BodyTemplate>
-            <h5 class="card-title">Card 3</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </BodyTemplate>
-    </Card>
-    <Card>
-        <BodyTemplate>
-            <h5 class="card-title">Card 1</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </BodyTemplate>
-    </Card>
-    <Card>
-        <BodyTemplate>
-            <h5 class="card-title">Card 2</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </BodyTemplate>
-    </Card>
-    <Card>
-        <BodyTemplate>
-            <h5 class="card-title">Card 3</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </BodyTemplate>
-    </Card>
-</Row>
+<style>
+    body {
+        margin: 0;
+        padding: 70px 0 0;
+        overflow-x: hidden;
+        background-color: #fdf9f0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>
+
+
+<div class="background">
+    <div class="ball"
+         style="width: 200px; height: 200px; background-color: rgba(253, 253, 128, 0.8); top: 10%; left: 20%;"></div>
+    <div class="ball" style="width: 300px; height: 300px; background-color: #7BE5F1; top: 30%; left: 60%;"></div>
+    <div class="ball" style="width: 250px; height: 250px; background-color: #fa60a0; top: 70%; left: 30%;"></div>
+</div>
+
+<nav class="navbar1">
+    <ul class="nav-link1">
+        <li><a href="#home">主页</a></li>
+        <li><a href="#about">关于</a></li>
+        <li><a href="#blog">博客</a></li>
+        <li><a href="#contact">联系</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <main class="main-content">
+        <!-- 个人介绍 -->
+        <article class="card profile-card">
+            <img src="https://picsum.photos/200" alt="Profile" class="profile-pic">
+            <div>
+                <h1>TiO2 EvoLve 的空间</h1>
+                <p>Frontend Developer & UI Designer</p>
+                <p>Sharing ideas about web development and design</p>
+            </div>
+        </article>
+
+        <!-- 博客文章 -->
+        <article class="card">
+            <h2>Exploring Blur Effects</h2>
+            <p class="post-date">August 1, 2023</p>
+            <p>Discover how to create beautiful background effects using CSS blur filters...</p>
+        </article>
+
+        <article class="card">
+            <h2>Color Theory in Web Design</h2>
+            <p class="post-date">July 25, 2023</p>
+            <p>Understanding color palettes and their psychological impacts...</p>
+        </article>
+    </main>
+
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <div class="card">
+            <h3>Recent Posts</h3>
+            <ul>
+                <li><a href="https://space.bilibili.com/59422806?spm_id_from=333.1007.0.0">bilibili</a></li>
+                <li><a href="#">Responsive Design</a></li>
+                <li><a href="#">UI/UX Trends</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Connect</h3>
+            <p>📧 3290158038@qq.com</p>
+            <p>💎 山东-济南</p>
+            <p>💻 github.com/TiO2EvoLve</p>
+        </div>
+    </aside>
+</div>
