@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8H28o4I0d2U+Gg4MsxVq/aqpPa8f60YW+sVQMX3VPrM=",
+  "Hash": "M5EDMyCZ+q//bVlK3biNETKQICWjg4zsLyC33nDih0k=",
   "Source": "BlazorWebASA",
   "BasePath": "/",
   "Mode": "Root",
@@ -10351,25 +10351,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
-    },
-    {
-      "Identity": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\sbox.png",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "images/sbox.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\sbox.png"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\index.html",

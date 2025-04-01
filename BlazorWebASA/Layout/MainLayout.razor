@@ -1,7 +1,19 @@
-﻿@inherits LayoutComponentBase
-<div class="page">
-    <main>
-        @Body
-    </main>
-</div>
+﻿@using BlazorWebASA.Pages
+@inherits LayoutComponentBase
+
+<style>
+    body {
+        margin: 0;
+        padding: 70px 0 0;
+        overflow-x: hidden;
+        background-color: #fdf9f0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>
+
+<Navbar/>
+
+@Body
+
+
 

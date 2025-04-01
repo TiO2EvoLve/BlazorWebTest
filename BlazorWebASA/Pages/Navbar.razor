@@ -1,0 +1,23 @@
+﻿@page "/navbar"
+
+<style>
+    .nav-link1 a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .nav-link1 a:hover {
+        color: #fa60a0;
+    }
+</style>
+
+<nav class="navbar1">
+    <ul class="nav-link1">
+        <li><NavLink class="mystyle" href="/" Match="NavLinkMatch.All">主页</NavLink></li>
+        <li><NavLink class="mystyle" href="/about">关于</NavLink></li>
+        <li><NavLink class="mystyle" href="/blog">博客</NavLink></li>
+        <li><NavLink class="mystyle" href="/contact">联系</NavLink></li>
+    </ul>
+</nav>
