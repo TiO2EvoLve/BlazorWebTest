@@ -26,10 +26,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/C\#/BlazorWebTest/BlazorWebASA/Pages/About.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Project/C\#/BlazorWebTest/BlazorWebASA/Pages/Blog.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -45,6 +41,10 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/Project/C\#/BlazorWebTest/BlazorWebASA/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ipb3jv30eq
+
+[D:/Project/C\#/BlazorWebTest/BlazorWebASA/Pages/About.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3ayzkk9df5
 
 [D:/Project/C\#/BlazorWebTest/BlazorWebASA/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==

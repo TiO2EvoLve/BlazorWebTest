@@ -1,7 +1,7 @@
 /* /Layout/MainLayout.razor.rz.scp.css */
 
 
-
+/* /Pages/About.razor.rz.scp.css */
 /* /Pages/Home.razor.rz.scp.css */
 
 .background[b-f2bz8d6fvp] {
@@ -22,7 +22,7 @@
 .container[b-f2bz8d6fvp] {
     display: flex;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 70%;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -51,8 +51,17 @@
     margin-bottom: 2rem;
     backdrop-filter: blur(5px);
 }
-.card a[b-f2bz8d6fvp]{
+li[b-f2bz8d6fvp]{
+    list-style-type: none;
+}
+li a:hover[b-f2bz8d6fvp]{
     color: #fa60a0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.card a[b-f2bz8d6fvp]{
+    color: #49CEFFFF;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
