@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorWebASA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6c0214cd7344b86564209c0f38902e4251ddbc5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d99a0c2963d74e3146672b33788cd9dfc95c63a")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorWebASA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorWebASA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
