@@ -3,7 +3,6 @@
 
 /* /Pages/About.razor.rz.scp.css */
 /* /Pages/Home.razor.rz.scp.css */
-
 .background[b-f2bz8d6fvp] {
     position: fixed;
     top: 0;
@@ -44,15 +43,27 @@
 
 /* 卡片样式扩展 */
 .card[b-f2bz8d6fvp] {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
     backdrop-filter: blur(5px);
 }
-li[b-f2bz8d6fvp]{
+ul[b-f2bz8d6fvp]{
+    padding: 0;
+    gap: 1rem;
+}
+ul li[b-f2bz8d6fvp]{
+    margin-bottom: 10px;
     list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+li img[b-f2bz8d6fvp]{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }
 li a:hover[b-f2bz8d6fvp]{
     color: #fa60a0;

@@ -25,8 +25,36 @@
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
+      "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\afdian.ico",
+      "PackagePath": "staticwebassets\\images\\afdian.ico"
+    },
+    {
+      "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\backroom.png",
+      "PackagePath": "staticwebassets\\images\\backroom.png"
+    },
+    {
+      "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\bilibili.ico",
+      "PackagePath": "staticwebassets\\images\\bilibili.ico"
+    },
+    {
       "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\pool.png",
+      "PackagePath": "staticwebassets\\images\\pool.png"
+    },
+    {
+      "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\room.png",
+      "PackagePath": "staticwebassets\\images\\room.png"
+    },
+    {
+      "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\steam.ico",
+      "PackagePath": "staticwebassets\\images\\steam.ico"
+    },
+    {
+      "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\touhou.png",
+      "PackagePath": "staticwebassets\\images\\touhou.png"
     },
     {
       "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\index.html",
