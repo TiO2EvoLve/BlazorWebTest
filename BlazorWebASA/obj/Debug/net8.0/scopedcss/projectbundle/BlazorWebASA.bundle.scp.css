@@ -245,6 +245,9 @@ li a:hover[b-f2bz8d6fvp]{
     color: white;
     cursor: pointer;
 }
+.view-btn:hover[b-f2bz8d6fvp] {
+    background: #fa60a0;
+}
 /* /Pages/Navbar.razor.rz.scp.css */
 /* 新增导航栏 */
 .navbar1[b-psuz0cmyh9] {

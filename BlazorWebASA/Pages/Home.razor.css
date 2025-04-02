@@ -240,3 +240,6 @@ li a:hover{
     color: white;
     cursor: pointer;
 }
+.view-btn:hover {
+    background: #fa60a0;
+}

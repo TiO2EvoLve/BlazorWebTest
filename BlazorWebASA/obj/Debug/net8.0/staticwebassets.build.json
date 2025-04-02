@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Vj8X3C6aWR5VAFNbbxwgYVopvDjx0XLTTQ4tMiDMHUQ=",
+  "Hash": "d3gTVp0jOuMf2X46l3VKrhCL3vDFu2Ka3e/E4xG/pbo=",
   "Source": "BlazorWebASA",
   "BasePath": "/",
   "Mode": "Root",
@@ -10389,6 +10389,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\bilibili.ico"
+    },
+    {
+      "Identity": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\github.ico",
+      "SourceId": "BlazorWebASA",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/github.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\github.ico"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\logo.png",

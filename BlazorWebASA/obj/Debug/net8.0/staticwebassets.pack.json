@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\images\\bilibili.ico"
     },
     {
+      "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\github.ico",
+      "PackagePath": "staticwebassets\\images\\github.ico"
+    },
+    {
       "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
