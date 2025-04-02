@@ -25,10 +25,6 @@
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\afdian.ico",
-      "PackagePath": "staticwebassets\\images\\afdian.ico"
-    },
-    {
       "Id": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\backroom.png",
       "PackagePath": "staticwebassets\\images\\backroom.png"
     },

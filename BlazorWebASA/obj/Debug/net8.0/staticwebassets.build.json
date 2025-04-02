@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d3gTVp0jOuMf2X46l3VKrhCL3vDFu2Ka3e/E4xG/pbo=",
+  "Hash": "Si2WCsfmwGRc2JNw9qT05lMh0gBv3A3qIcyDU41LQJg=",
   "Source": "BlazorWebASA",
   "BasePath": "/",
   "Mode": "Root",
@@ -10332,25 +10332,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\icon-192.png"
-    },
-    {
-      "Identity": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\afdian.ico",
-      "SourceId": "BlazorWebASA",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "images/afdian.ico",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\afdian.ico"
     },
     {
       "Identity": "D:\\Project\\C#\\BlazorWebTest\\BlazorWebASA\\wwwroot\\images\\backroom.png",
