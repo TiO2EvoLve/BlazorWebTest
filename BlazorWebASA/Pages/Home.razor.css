@@ -103,6 +103,7 @@ li a:hover{
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
+    overflow: hidden;
     background: linear-gradient(45deg, #e6f2ff, #ffd7e8, #ffd7e8);
     border-radius: 20px;
     margin-bottom: 2rem;

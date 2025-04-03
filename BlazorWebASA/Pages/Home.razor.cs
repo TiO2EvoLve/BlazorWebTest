@@ -4,8 +4,8 @@ namespace BlazorWebASA.Pages;
 
 public class Home_razor : ComponentBase
 {
-    public TimeSpan currentTime;
-    private DateTime StartTime = new (2025,3,27);
+    protected TimeSpan currentTime;
+    private readonly DateTime StartTime = new (2025,3,27);
     private DateTime NowTime => DateTime.Now;
 
     protected override void OnInitialized()
