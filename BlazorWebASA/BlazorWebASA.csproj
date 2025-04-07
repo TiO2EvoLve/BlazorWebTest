@@ -19,12 +19,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Update="wwwroot\images\Waterfall\1.jpeg">
-        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      </Content>
-    </ItemGroup>
-
-    <ItemGroup>
       <Folder Include="wwwroot\images\" />
     </ItemGroup>
 
