@@ -1,6 +1,7 @@
 ﻿@page "/"
 @inherits Home_razor
 
+
 <!-- 背景-->
 <div class="background">
     <div class="ball" style="width: 200px; height: 200px; background-color: #63dbff; top: 10%; left: 20%;"></div>
@@ -23,9 +24,22 @@
 
         <!-- 博客文章 -->
         <article class="card">
-            <h2>网站建设中。。。</h2>
-            <p class="post-date">March 27, 2025</p>
-            <p>网站正在开发中，有些按钮没有效果是正常的</p>
+            <h3>正在学习</h3>
+            <p class="project-date">进度条代表偏重性</p>
+        <div class="skills-container">
+            @foreach (var skill in Skills)
+            {
+                <div class="skill-item @skill.Class">
+                    <img src="@skill.Img" alt="" style="width: 50px;height: 50px"/>
+                    <div class="skill-content">
+                        <div class="skill-name">@skill.Name</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: @skill.Progress%;"></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
         </article>
 
         <article class="container2">
@@ -44,13 +58,13 @@
             </div>
         </article>
 
-        <article class="card" style="display: flex; align-items: center;">
-            <h2 style="color: #fa60a0;font-weight: bolder">🔶🔶🔶&nbsp;&nbsp;&nbsp;个人作品&nbsp;&nbsp;&nbsp;🔶🔶🔶</h2>
+        <article class="card" style="display: flex; align-items: center;padding: 20px;">
+            <h2 style="color: #fa60a0;font-weight: bolder">个人作品</h2>
         </article>
 
         <article class="container3">
             <article class="project-card">
-                <img src="./images/room.png" class="project-image">
+                <img src="./images/room.png" class="project-image" alt="">
                 <div class="project-info">
                     <h2 class="project-title">室内场景</h2>
                     <p class="project-date">2023-02-24</p>
@@ -63,7 +77,7 @@
             </article>
 
             <article class="project-card">
-                <img src="./images/backroom.png" class="project-image">
+                <img src="./images/backroom.png" class="project-image" alt="">
                 <div class="project-info">
                     <h2 class="project-title">后室场景</h2>
                     <p class="project-date">2024-07-09</p>
@@ -76,7 +90,7 @@
             </article>
 
             <article class="project-card">
-                <img src="./images/touhou.png" class="project-image">
+                <img src="./images/touhou.png" class="project-image" alt="">
                 <div class="project-info">
                     <h2 class="project-title">东方弹幕游戏</h2>
                     <p class="project-date">2024-03-09</p>
@@ -89,7 +103,7 @@
             </article>
 
             <article class="project-card">
-                <img src="./images/pool.png" class="project-image">
+                <img src="./images/pool.png" class="project-image" alt="">
                 <div class="project-info">
                     <h2 class="project-title">池核场景</h2>
                     <p class="project-date">2024-04-29</p>
@@ -102,7 +116,7 @@
             </article>
 
             <article class="project-card">
-                <img src="./images/toon.png" class="project-image">
+                <img src="./images/toon.png" class="project-image" alt="">
                 <div class="project-info">
                     <h2 class="project-title">三渲二shader</h2>
                     <p class="project-date">2024-12-23</p>
@@ -115,7 +129,7 @@
             </article>
 
             <article class="project-card">
-                <img src="./images/plug.png" class="project-image">
+                <img src="./images/plug.png" class="project-image" alt="">
                 <div class="project-info">
                     <h2 class="project-title">模型导出插件</h2>
                     <p class="project-date">2025-1-2</p>
@@ -137,15 +151,15 @@
             <br/>
             <ul>
                 <li>
-                    <img src="images/bilibili.ico"/>
+                    <img src="images/bilibili.ico" alt=""/>
                     <a target="_blank" href="https://space.bilibili.com/59422806">Bilibili主页</a>
                 </li>
                 <li>
-                    <img src="images/steam.ico"/>
+                    <img src="images/steam.ico" alt=""/>
                     <a target="_blank" href="https://steamcommunity.com/id/TiO2EvoLve">Steam主页</a>
                 </li>
                 <li>
-                    <img src="images/github.ico"/>
+                    <img src="images/github.ico" alt=""/>
                     <a target="_blank" href="https://github.com/TiO2EvoLve">Github主页</a>
                 </li>
             </ul>

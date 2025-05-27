@@ -18,4 +18,26 @@ public class Home_razor : ComponentBase
         currentTime = NowTime - StartTime;
         InvokeAsync(StateHasChanged);
     }
+
+    public class Skill
+    {
+        public string Name { get; set; }
+        public string Class { get; set; }
+        public string Img { get; set; }
+        public int Progress { get; set; }
+        
+        
+    }
+
+    public List<Skill> Skills = new()
+    {
+        new Skill { Name = "UE5", Class = "pink",Img = "./images/Icon/UE5.png", Progress = 100 },
+        new Skill { Name = "C#", Class = "green",Img = "./images/Icon/C2.png", Progress = 90 },
+        new Skill { Name = "Blender", Class = "blue",Img = "./images/Icon/Blender.png", Progress = 80 },
+        new Skill { Name = "Python", Class = "purply",Img = "./images/Icon/python.png", Progress = 75 },
+        new Skill { Name = "PS", Class = "orange", Img = "./images/Icon/ps.png",Progress = 40 },
+        new Skill { Name = "S&box", Class = "yellow",Img = "./images/Icon/sbox.png", Progress = 40 }
+    };
+
+
 }

@@ -1,9 +1,200 @@
 @page "/blog"
 
-<div class="container">
-    <article class="card">
-        <h2>网站建设中。。。</h2>
-        <p class="post-date">March 27, 2025</p>
-        <p>这是博客页面</p>
-    </article>
+<div class="page-container">
+    <div class="anime-container">
+        @foreach (var anime in AnimeList)
+        {
+            <div class="anime-card">
+                <div class="anime-image">
+                    <img src="@anime.ImageUrl" alt="@anime.Title" />
+                </div>
+                <div class="anime-info">
+                    <h3>@anime.Title</h3>
+                    <div class="rating">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <span class="star @(i <= anime.Rating ? "filled" : "")">★</span>
+                        }
+                        <span class="rating-number">@anime.Rating.ToString("F1")</span>
+                    </div>
+                    <p class="description">@anime.Description</p>
+                    <div class="review-section">
+                        <p class="review-content">@anime.UserReview</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
+
+<style>
+    .page-container {
+        background: white;
+        width: 80%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .anime-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .anime-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .anime-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .anime-image {
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+    }
+
+    .anime-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .anime-card:hover .anime-image img {
+        transform: scale(1.05);
+    }
+
+    .anime-info {
+        padding: 15px;
+    }
+
+    .anime-info h3 {
+        margin: 0 0 10px 0;
+        color: #333;
+        font-size: 1.2rem;
+        background: rgba(0, 0, 0, 0.05);
+        padding: 8px;
+        border-radius: 6px;
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .star {
+        color: #ccc;
+        font-size: 1.2rem;
+        margin-right: 2px;
+    }
+
+    .star.filled {
+        color: #FFD700;
+    }
+
+    .rating-number {
+        margin-left: 8px;
+        color: #333;
+        font-size: 0.9rem;
+    }
+
+    .description {
+        color: #333;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin: 0 0 15px 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .review-section {
+        margin-top: 15px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding-top: 15px;
+    }
+
+    .review-content {
+        color: #333;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin: 0;
+        font-style: italic;
+    }
+</style>
+
+@code {
+    private List<Anime> AnimeList = new()
+    {
+        new Anime 
+        { 
+            Title = "进击的巨人",
+            ImageUrl = "https://picsum.photos/800/400",
+            Rating = 4.8f,
+            Description = "人类与巨人的生存之战，艾伦·耶格尔的复仇之路。",
+            UserReview = "震撼的剧情发展，出色的角色塑造，堪称神作。"
+        },
+        new Anime 
+        { 
+            Title = "鬼灭之刃",
+            ImageUrl = "https://picsum.photos/800/400",
+            Rating = 4.7f,
+            Description = "少年炭治郎的斩鬼之旅，为了妹妹而战。",
+            UserReview = "画面精美，打斗场面流畅，情感刻画细腻。"
+        },
+        new Anime 
+        { 
+            Title = "咒术回战",
+            ImageUrl = "https://picsum.photos/800/400",
+            Rating = 4.6f,
+            Description = "高中生虎杖悠仁的咒术师之路。",
+            UserReview = "世界观设定新颖，角色个性鲜明，期待后续发展。"
+        },
+        new Anime 
+        { 
+            Title = "间谍过家家",
+            ImageUrl = "https://picsum.photos/800/400",
+            Rating = 4.9f,
+            Description = "一个由间谍、杀手和超能力者组成的虚假家庭。",
+            UserReview = "轻松搞笑又不失温情，每个角色都很有魅力。"
+        },
+        new Anime 
+        { 
+            Title = "海贼王",
+            ImageUrl = "https://picsum.photos/800/400",
+            Rating = 4.9f,
+            Description = "路飞寻找ONE PIECE的冒险故事。",
+            UserReview = "经典中的经典，热血与友情的最佳诠释。"
+        },
+        new Anime 
+        { 
+            Title = "钢之炼金术师",
+            ImageUrl = "https://picsum.photos/800/400",
+            Rating = 4.8f,
+            Description = "爱德华和阿尔冯斯的炼金术之旅。",
+            UserReview = "完美的故事结构，深刻的人性探讨，值得反复观看。"
+        }
+    };
+
+    public class Anime
+    {
+        public string Title { get; set; }
+        public string ImageUrl { get; set; }
+        public float Rating { get; set; }
+        public string Description { get; set; }
+        public string UserReview { get; set; }
+    }
+}

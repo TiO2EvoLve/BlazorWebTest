@@ -104,7 +104,10 @@ li a:hover{
     align-items: center;
     padding: 2rem;
     overflow: hidden;
-    background: linear-gradient(45deg, #e6f2ff, #ffd7e8, #ffd7e8);
+    /*background: linear-gradient(45deg, #e6f2ff, #ffd7e8, #ffd7e8);*/
+
+    background: linear-gradient(45deg, rgba(255, 222, 234, 1.000) 0.000%,  rgba(253, 237, 255, 1.000) 40.000%, rgba(236, 252, 255, 1.000) 60.000%, rgba(209, 255, 255, 1.000) 80.000%, rgba(181, 255, 251, 1.000) 100.000%);
+
     border-radius: 20px;
     margin-bottom: 2rem;
 }
@@ -245,4 +248,95 @@ li a:hover{
 }
 .view-btn:hover {
     background: #fa60a0;
+}
+/*////学习内容//////*/
+
+card h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/* 技能列表容器 */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+}
+
+/* 单个技能样式 */
+.skill-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+}
+
+/* 图标样式 */
+.skill-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    color: #3498db;
+}
+
+/* 技能内容 */
+.skill-content {
+    flex-grow: 1;
+    margin-left: 1rem;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 0.3rem;
+}
+
+/* 进度条容器 */
+.progress-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* 进度条填充 */
+.progress-fill {
+    height: 100%;
+    background: #3498db;
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* 不同技能的进度宽度 */
+.red .progress-fill {
+    background:linear-gradient(to right, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
+}
+
+.blue .progress-fill {
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+.purply .progress-fill {
+    background: linear-gradient(to right, #CE9FFC 0%, #7367F0 100%);
+}
+
+.yellow .progress-fill {
+    background: linear-gradient(to right, #F0FF00, #58CFFB);
+}
+
+.green .progress-fill {
+    background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+.orange .progress-fill {
+    background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+.pink .progress-fill {
+    background: linear-gradient(to right, #fad0c4 0%, #ffd1ff 100%);
 }
