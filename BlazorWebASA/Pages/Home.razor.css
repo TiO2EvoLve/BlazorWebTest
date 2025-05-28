@@ -104,10 +104,7 @@ li a:hover{
     align-items: center;
     padding: 2rem;
     overflow: hidden;
-    /*background: linear-gradient(45deg, #e6f2ff, #ffd7e8, #ffd7e8);*/
-
     background: linear-gradient(45deg, rgba(255, 222, 234, 1.000) 0.000%,  rgba(253, 237, 255, 1.000) 40.000%, rgba(236, 252, 255, 1.000) 60.000%, rgba(209, 255, 255, 1.000) 80.000%, rgba(181, 255, 251, 1.000) 100.000%);
-
     border-radius: 20px;
     margin-bottom: 2rem;
 }
@@ -328,7 +325,7 @@ card h3 {
 }
 
 .yellow .progress-fill {
-    background: linear-gradient(to right, #F0FF00, #58CFFB);
+    background: linear-gradient(to right, #F0FF00 0%, #58CFFB 100%);
 }
 
 .green .progress-fill {

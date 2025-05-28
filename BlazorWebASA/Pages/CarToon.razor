@@ -1,6 +1,7 @@
 @page "/cartoon"
 
 <div class="page-container">
+    <h1 class="page-title">我的动漫推荐</h1>
     <div class="anime-container">
         @foreach (var anime in AnimeList)
         {
@@ -11,11 +12,16 @@
                 <div class="anime-info">
                     <h3>@anime.Title</h3>
                     <div class="rating">
-                        @for (int i = 1; i <= 5; i++)
-                        {
-                            <span class="star @(i <= anime.Rating ? "filled" : "")">★</span>
-                        }
-                        <span class="rating-number">@anime.Rating.ToString("F1")</span>
+                        <div class="stars-container">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                <span class="star @(i <= anime.Rating ? "filled" : "")">★</span>
+                            }
+                        </div>
+                        <div class="rating-details">
+                            <span class="rating-number">@anime.Rating.ToString("F1")</span>
+                            <span class="rating-text">分</span>
+                        </div>
                     </div>
                     <p class="description">@anime.Description</p>
                     <div class="review-section">
@@ -29,29 +35,33 @@
 
 <style>
     .page-container {
-        background: white;
-        width: 80%;
-        padding: 20px;
+        padding: 2rem;
         margin: 0 auto;
+    }
+
+    .page-title {
+        text-align: center;
+        color: #333;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
     }
 
     .anime-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 20px;
-        padding: 20px;
-        max-width: 1400px;
-        margin: 0 auto;
+        gap: 2rem;
+        padding: 0 1rem;
     }
 
     .anime-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
+        background: white;
         border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         transition: transform 0.3s ease;
-        border: 2px solid rgba(0, 0, 0, 0.1);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .anime-card:hover {
@@ -60,132 +70,150 @@
 
     .anime-image {
         width: 100%;
-        height: 300px;
+        padding-top: 110%; /* 设置图片容器的高宽比为 7:5 */
+        position: relative;
         overflow: hidden;
     }
 
     .anime-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-
-    .anime-card:hover .anime-image img {
-        transform: scale(1.05);
     }
 
     .anime-info {
-        padding: 15px;
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     .anime-info h3 {
-        margin: 0 0 10px 0;
-        color: #333;
-        font-size: 1.2rem;
-        background: rgba(0, 0, 0, 0.05);
-        padding: 8px;
-        border-radius: 6px;
+        margin: 0 0 1rem 0;
+        color: #2c3e50;
+        font-size: 1.5rem;
     }
 
     .rating {
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        background: #f8f9fa;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+    }
+
+    .stars-container {
+        display: flex;
+        align-items: center;
     }
 
     .star {
-        color: #ccc;
-        font-size: 1.2rem;
-        margin-right: 2px;
+        color: #ddd;
+        font-size: 1.4rem;
+        margin-right: 4px;
+        transition: color 0.3s ease;
     }
 
     .star.filled {
-        color: #FFD700;
+        color: #ffd700;
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+
+    .rating-details {
+        display: flex;
+        align-items: center;
+        gap: 4px;
     }
 
     .rating-number {
-        margin-left: 8px;
-        color: #333;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    .rating-text {
+        color: #666;
         font-size: 0.9rem;
     }
 
     .description {
-        color: #333;
-        font-size: 0.9rem;
-        line-height: 1.4;
-        margin: 0 0 15px 0;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        color: #666;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+        flex: 1;
     }
 
     .review-section {
-        margin-top: 15px;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        padding-top: 15px;
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: auto;
     }
 
     .review-content {
-        color: #333;
-        font-size: 0.9rem;
-        line-height: 1.4;
-        margin: 0;
+        color: #555;
         font-style: italic;
+        margin: 0;
     }
+    
 </style>
 
-@code {
-    private List<Anime> AnimeList = new()
+@code
+{
+    public List<Anime> AnimeList = new()
     {
         new Anime 
         { 
-            Title = "进击的巨人",
+            Title = "轻音少女",
             ImageUrl = "https://picsum.photos/800/400",
-            Rating = 4.8f,
-            Description = "人类与巨人的生存之战，艾伦·耶格尔的复仇之路。",
-            UserReview = "震撼的剧情发展，出色的角色塑造，堪称神作。"
+            Rating = 5f,
+            Description = "讲述了樱丘高中轻音部的故事，描绘了少女们追逐音乐梦想的温馨日常。",
+            UserReview = "女孩子之间真是美好啊，音乐和友情的完美结合！"
         },
         new Anime 
         { 
-            Title = "鬼灭之刃",
+            Title = "请问你要来点兔子吗",
             ImageUrl = "https://picsum.photos/800/400",
-            Rating = 4.7f,
-            Description = "少年炭治郎的斩鬼之旅，为了妹妹而战。",
-            UserReview = "画面精美，打斗场面流畅，情感刻画细腻。"
+            Rating = 5f,
+            Description = "在充满咖啡香气的兔子咖啡馆里，少女们展开了一段温馨治愈的故事。",
+            UserReview = "每一集都让人感到温暖，是治愈系动画的经典之作。"
         },
         new Anime 
         { 
-            Title = "咒术回战",
+            Title = "悠哉日常大王",
             ImageUrl = "https://picsum.photos/800/400",
-            Rating = 4.6f,
-            Description = "高中生虎杖悠仁的咒术师之路。",
-            UserReview = "世界观设定新颖，角色个性鲜明，期待后续发展。"
+            Rating = 5f,
+            Description = "描绘了乡村学校中少女们的悠闲日常，充满欢笑与温情。",
+            UserReview = "让人怀念起童年的美好时光，非常治愈。"
         },
         new Anime 
         { 
-            Title = "间谍过家家",
+            Title = "珈百璃的坠落",
             ImageUrl = "https://picsum.photos/800/400",
-            Rating = 4.9f,
-            Description = "一个由间谍、杀手和超能力者组成的虚假家庭。",
-            UserReview = "轻松搞笑又不失温情，每个角色都很有魅力。"
+            Rating = 5f,
+            Description = "天使珈百璃来到人间后沉迷游戏，展开了一系列搞笑的故事。",
+            UserReview = "反差萌太可爱了，笑点满满！"
         },
         new Anime 
         { 
-            Title = "海贼王",
+            Title = "登山少女",
             ImageUrl = "https://picsum.photos/800/400",
-            Rating = 4.9f,
-            Description = "路飞寻找ONE PIECE的冒险故事。",
-            UserReview = "经典中的经典，热血与友情的最佳诠释。"
+            Rating = 5f,
+            Description = "少女们通过登山活动，体验自然之美，收获成长的故事。",
+            UserReview = "看完之后特别想去爬山，风景太美了！"
         },
         new Anime 
         { 
-            Title = "钢之炼金术师",
+            Title = "孤独摇滚",
             ImageUrl = "https://picsum.photos/800/400",
-            Rating = 4.8f,
-            Description = "爱德华和阿尔冯斯的炼金术之旅。",
-            UserReview = "完美的故事结构，深刻的人性探讨，值得反复观看。"
+            Rating = 5f,
+            Description = "社恐少女后藤一里组建乐队，在音乐中寻找自我的故事。",
+            UserReview = "音乐和成长的故事，非常打动人心！"
         }
     };
 
