@@ -32,24 +32,24 @@ public class CarToon_razor : ComponentBase
                 Title = "轻音少女",
                 ImageUrl = "./images/动漫/轻音少女.png",
                 Rating = 5f,
-                Description = "讲述了樱丘高中轻音部的故事，描绘了少女们追逐音乐梦想的温馨日常。",
-                UserReview = "女孩子之间真是美好啊，音乐和友情的完美结合！"
+                Description = "讲述了樱丘高中轻音部的故事，描绘了少女们追逐音乐梦想的温馨日常",
+                UserReview = "神中神,千万不能错过的作品"
             },
             new Anime 
             { 
                 Title = "请问你要来点兔子吗",
                 ImageUrl = "./images/动漫/请问你要来点兔子吗.png",
                 Rating = 5f,
-                Description = "在充满咖啡香气的兔子咖啡馆里，少女们展开了一段温馨治愈的故事。",
-                UserReview = "每一集都让人感到温暖，是治愈系动画的经典之作。"
+                Description = "在充满咖啡香气的兔子咖啡馆里，少女们展开了一段温馨治愈的故事",
+                UserReview = "萌系至高圣作"
             },
             new Anime 
             { 
                 Title = "悠哉日常大王",
                 ImageUrl = "./images/动漫/悠哉日常大王.png",
                 Rating = 5f,
-                Description = "描绘了乡村学校中少女们的悠闲日常，充满欢笑与温情。",
-                UserReview = "让人怀念起童年的美好时光，非常治愈。"
+                Description = "描绘了乡村学校中少女们的悠闲日常，充满欢笑与温情",
+                UserReview = "让人怀念起童年的美好时光，非常治愈"
             },
             new Anime 
             { 
@@ -73,7 +73,7 @@ public class CarToon_razor : ComponentBase
                 ImageUrl = "./images/动漫/孤独摇滚.png",
                 Rating = 4.9f,
                 Description = "社恐少女后藤一里组建乐队，在音乐中寻找自我的故事。",
-                UserReview = "音乐和成长的故事，非常打动人心！"
+                UserReview = "暂无"
             },
             new Anime 
             { 
@@ -81,7 +81,39 @@ public class CarToon_razor : ComponentBase
                 ImageUrl = "./images/动漫/放学后的海堤日记.png",
                 Rating = 4.7f,
                 Description = "钓鱼社团的日常",
-                UserReview = "芳文社万岁!"
+                UserReview = "暂无"
+            },
+            new Anime 
+            { 
+                Title = "打了300年的史莱姆，不知不觉就练到了满级",
+                ImageUrl = "./images/动漫/史莱姆.png",
+                Rating = 5f,
+                Description = "钓鱼社团的日常",
+                UserReview = "暂无"
+            },
+            new Anime 
+            { 
+                Title = "女孩的钓鱼漫画",
+                ImageUrl = "./images/动漫/女孩的钓鱼漫画.png",
+                Rating = 5f,
+                Description = "钓鱼社团的日常",
+                UserReview = "暂无"
+            },
+            new Anime 
+            { 
+                Title = "黄金拼图",
+                ImageUrl = "./images/动漫/黄金拼图.png",
+                Rating = 5f,
+                Description = "钓鱼社团的日常",
+                UserReview = "暂无"
+            },
+            new Anime 
+            { 
+                Title = "街角魔族",
+                ImageUrl = "./images/动漫/街角魔族.png",
+                Rating = 5f,
+                Description = "恶魔与魔法少女的故事",
+                UserReview = "暂无"
             }
         };
         
