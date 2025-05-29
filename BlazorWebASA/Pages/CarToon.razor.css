@@ -1,0 +1,321 @@
+﻿/* 基础样式 */
+.anime-container {
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.Title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background: linear-gradient(90deg, #CE9FFC,#7367F0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    align-items: center
+}
+
+/* 筛选区域样式 */
+.filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.search-box {
+    display: flex;
+    width: 500px;
+    gap: 8px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #368adf;
+    box-shadow: 0 0 0 3px rgba(138, 99, 210, 0.2);
+}
+
+.search-button, .reset-button {
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.search-button {
+    background: #8a63d2;
+}
+
+.reset-button {
+    background: #ff6b6b;
+}
+
+.search-button:hover {
+    background: #7a53c2;
+    transform: translateY(-2px);
+}
+
+.reset-button:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-options label {
+    font-weight: 500;
+    color: #555;
+}
+
+.sort-select {
+    padding: 10px 15px;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.sort-select:focus {
+    outline: none;
+    border-color: #8a63d2;
+    box-shadow: 0 0 0 3px rgba(138, 99, 210, 0.2);
+}
+
+/* 网格容器 - 确保卡片大小一致 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+/* 卡片样式 - 固定高度 */
+.anime-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 确保所有卡片高度一致 */
+}
+
+.card-header {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 固定338x450比例 */
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 133.13%; /* 450/338 ≈ 1.3313 */
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.rating-badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 5px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 14px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    font-weight: 600;
+}
+
+.star {
+    color: #e0e0e0;
+    font-size: 18px;
+}
+
+.star.filled {
+    color: #ffc107;
+    text-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+}
+
+.rating-value {
+    font-weight: 700;
+    font-size: 16px;
+    margin-left: 5px;
+    color: #ff6b00;
+}
+
+.card-body {
+    font-size: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* 确保卡片内容区域统一高度 */
+    min-height: 250px; /* 设置最小高度确保一致性 */
+}
+
+.anime-title {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #2c3e50;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.anime-description {
+    color: #555;
+    height: 50px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 限制显示行数 */
+    -webkit-box-orient: vertical;
+}
+
+.user-review-section {
+    background: #f8f9ff;
+    border-radius: 8px;
+    padding: 15px;
+    border-left: 4px solid #8a63d2;
+    margin-top: 10px;
+    flex: 1;
+    min-height: 100px; /* 设置最小高度确保一致性 */
+}
+
+.review-label {
+    font-weight: 600;
+    color: #8a63d2;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.user-review {
+    margin: 0;
+    color: #555;
+    font-style: italic;
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 限制显示行数 */
+    -webkit-box-orient: vertical;
+}
+
+/* 无结果样式 */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.no-results-icon {
+    font-size: 60px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .filter-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .sort-options {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+
+    .search-box {
+        flex-wrap: wrap;
+    }
+
+    .search-input {
+        min-width: 100%;
+    }
+
+    .search-button, .reset-button {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .anime-container {
+        padding: 10px;
+    }
+
+    .anime-title {
+        font-size: 20px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .search-button, .reset-button {
+        min-width: auto;
+        padding: 0 15px;
+    }
+}

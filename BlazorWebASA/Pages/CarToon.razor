@@ -1,228 +1,68 @@
-@page "/cartoon"
+﻿@page "/cartoon"
+@inherits CarToon_razor
+@using System.Linq
 
-<div class="page-container">
-    <h1 class="page-title">我的动漫推荐</h1>
-    <div class="anime-container">
-        @foreach (var anime in AnimeList)
+<div class="anime-container">
+    <h1 class="Title">动漫评价</h1>
+    <div class="filter-section">
+        <div class="search-box">
+            <input type="text" @bind="searchTerm" placeholder="搜索动漫..." class="search-input"
+                   @oninput="HandleSearchInput"/>
+            <button class="search-button" @onclick="FilterAnime">
+                <i class="search-icon">搜索</i>
+            </button>
+            <button class="reset-button" @onclick="ResetFilters">
+                <i class="reset-icon">重置</i>
+            </button>
+        </div>
+        <div class="sort-options">
+            <label>排序：</label>
+            <select @bind="SortOption" class="sort-select">
+                <option value="TitleAsc">标题 (A-Z)</option>
+                <option value="TitleDesc">标题 (Z-A)</option>
+                <option value="RatingDesc">评分 (高到低)</option>
+                <option value="RatingAsc">评分 (低到高)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        @foreach (var anime in FilteredAnimeList)
         {
             <div class="anime-card">
-                <div class="anime-image">
-                    <img src="@anime.ImageUrl" alt="@anime.Title" />
-                </div>
-                <div class="anime-info">
-                    <h3>@anime.Title</h3>
-                    <div class="rating">
-                        <div class="stars-container">
-                            @for (int i = 1; i <= 5; i++)
-                            {
-                                <span class="star @(i <= anime.Rating ? "filled" : "")">★</span>
-                            }
-                        </div>
-                        <div class="rating-details">
-                            <span class="rating-number">@anime.Rating.ToString("F1")</span>
-                            <span class="rating-text">分</span>
-                        </div>
+                <div class="card-header">
+                    <div class="image-container">
+                        <img src="@anime.ImageUrl" alt="@anime.Title"
+                             onerror="this.onerror=null;this.src='https://picsum.photos/338/450?random='+Math.random();"/>
                     </div>
-                    <p class="description">@anime.Description</p>
-                    <div class="review-section">
-                        <p class="review-content">@anime.UserReview</p>
+                    <div class="rating-badge">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <span class="star @(i <= anime.Rating ? "filled" : "")">★</span>
+                        }
+                        <span class="rating-value">@anime.Rating.ToString("0.0")</span>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <h3 class="anime-title">@anime.Title</h3>
+                    <div class="anime-description">@anime.Description</div>
+
+                    <div class="user-review-section">
+                        <div class="review-label">我的评价:</div>
+                        <div class="user-review">@anime.UserReview</div>
                     </div>
                 </div>
             </div>
         }
     </div>
+
+    @if (!FilteredAnimeList.Any())
+    {
+        <div class="no-results">
+            <i class="no-results-icon">😢</i>
+            <h3>没有找到匹配的动漫</h3>
+            <p>尝试使用不同的搜索词或重置筛选条件</p>
+        </div>
+    }
 </div>
-
-<style>
-    .page-container {
-        padding: 2rem;
-        margin: 0 auto;
-    }
-
-    .page-title {
-        text-align: center;
-        color: #333;
-        margin-bottom: 2rem;
-        font-size: 2.5rem;
-    }
-
-    .anime-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 2rem;
-        padding: 0 1rem;
-    }
-
-    .anime-card {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: transform 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-
-    .anime-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .anime-image {
-        width: 100%;
-        padding-top: 110%; /* 设置图片容器的高宽比为 7:5 */
-        position: relative;
-        overflow: hidden;
-    }
-
-    .anime-image img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .anime-info {
-        padding: 1.5rem;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .anime-info h3 {
-        margin: 0 0 1rem 0;
-        color: #2c3e50;
-        font-size: 1.5rem;
-    }
-
-    .rating {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-        background: #f8f9fa;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-    }
-
-    .stars-container {
-        display: flex;
-        align-items: center;
-    }
-
-    .star {
-        color: #ddd;
-        font-size: 1.4rem;
-        margin-right: 4px;
-        transition: color 0.3s ease;
-    }
-
-    .star.filled {
-        color: #ffd700;
-        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-    }
-
-    .rating-details {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
-
-    .rating-number {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #2c3e50;
-    }
-
-    .rating-text {
-        color: #666;
-        font-size: 0.9rem;
-    }
-
-    .description {
-        color: #666;
-        margin-bottom: 1rem;
-        line-height: 1.5;
-        flex: 1;
-    }
-
-    .review-section {
-        background: #f8f9fa;
-        padding: 1rem;
-        border-radius: 8px;
-        margin-top: auto;
-    }
-
-    .review-content {
-        color: #555;
-        font-style: italic;
-        margin: 0;
-    }
-    
-</style>
-
-@code
-{
-    public List<Anime> AnimeList = new()
-    {
-        new Anime 
-        { 
-            Title = "轻音少女",
-            ImageUrl = "https://picsum.photos/800/400",
-            Rating = 5f,
-            Description = "讲述了樱丘高中轻音部的故事，描绘了少女们追逐音乐梦想的温馨日常。",
-            UserReview = "女孩子之间真是美好啊，音乐和友情的完美结合！"
-        },
-        new Anime 
-        { 
-            Title = "请问你要来点兔子吗",
-            ImageUrl = "https://picsum.photos/800/400",
-            Rating = 5f,
-            Description = "在充满咖啡香气的兔子咖啡馆里，少女们展开了一段温馨治愈的故事。",
-            UserReview = "每一集都让人感到温暖，是治愈系动画的经典之作。"
-        },
-        new Anime 
-        { 
-            Title = "悠哉日常大王",
-            ImageUrl = "https://picsum.photos/800/400",
-            Rating = 5f,
-            Description = "描绘了乡村学校中少女们的悠闲日常，充满欢笑与温情。",
-            UserReview = "让人怀念起童年的美好时光，非常治愈。"
-        },
-        new Anime 
-        { 
-            Title = "珈百璃的坠落",
-            ImageUrl = "https://picsum.photos/800/400",
-            Rating = 5f,
-            Description = "天使珈百璃来到人间后沉迷游戏，展开了一系列搞笑的故事。",
-            UserReview = "反差萌太可爱了，笑点满满！"
-        },
-        new Anime 
-        { 
-            Title = "登山少女",
-            ImageUrl = "https://picsum.photos/800/400",
-            Rating = 5f,
-            Description = "少女们通过登山活动，体验自然之美，收获成长的故事。",
-            UserReview = "看完之后特别想去爬山，风景太美了！"
-        },
-        new Anime 
-        { 
-            Title = "孤独摇滚",
-            ImageUrl = "https://picsum.photos/800/400",
-            Rating = 5f,
-            Description = "社恐少女后藤一里组建乐队，在音乐中寻找自我的故事。",
-            UserReview = "音乐和成长的故事，非常打动人心！"
-        }
-    };
-
-    public class Anime
-    {
-        public string Title { get; set; }
-        public string ImageUrl { get; set; }
-        public float Rating { get; set; }
-        public string Description { get; set; }
-        public string UserReview { get; set; }
-    }
-}
