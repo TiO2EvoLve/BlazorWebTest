@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace BlazorWebASA.Pages;
+namespace Web.Pages;
 
 public class Home_razor : ComponentBase
 {

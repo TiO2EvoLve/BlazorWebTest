@@ -8,12 +8,8 @@
         <div class="search-box">
             <input type="text" @bind="searchTerm" placeholder="搜索动漫..." class="search-input"
                    @oninput="HandleSearchInput"/>
-            <button class="search-button" @onclick="FilterAnime">
-                <i class="search-icon">搜索</i>
-            </button>
-            <button class="reset-button" @onclick="ResetFilters">
-                <i class="reset-icon">重置</i>
-            </button>
+            <Button style="width: 80px;font-size: 15px" Color="Color.Success" IsOutline="true" Icon="fa-solid fa-font-awesome" Text="搜索" @onclick="FilterAnime"> </Button>
+            <Button style="width: 80px;font-size: 15px" Color="Color.Primary" IsOutline="true" Icon="fa-solid fa-font-awesome" Text="重置" @onclick="ResetFilters"> </Button>
         </div>
         <div class="sort-options">
             <label>排序：</label>

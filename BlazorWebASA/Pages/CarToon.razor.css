@@ -62,25 +62,6 @@
     font-weight: 500;
     min-width: 80px;
 }
-
-.search-button {
-    background: #8a63d2;
-}
-
-.reset-button {
-    background: #ff6b6b;
-}
-
-.search-button:hover {
-    background: #7a53c2;
-    transform: translateY(-2px);
-}
-
-.reset-button:hover {
-    background: #ff5252;
-    transform: translateY(-2px);
-}
-
 .sort-options {
     display: flex;
     align-items: center;
