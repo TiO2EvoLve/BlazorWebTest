@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Tommy;
 using Web.Entitys;
 
 namespace Web.Pages;
 
 public class CarToon_razor : ComponentBase
 {
-    protected string searchTerm = string.Empty;
-    private string _sortOption = "TitleAsc";
+    protected string searchTerm = string.Empty; //搜索内容
+    private string _sortOption = "TitleAsc"; //默认排序选项
 
     protected string SortOption
     {
@@ -21,125 +22,51 @@ public class CarToon_razor : ComponentBase
         }
     }
 
-    private readonly List<Anime> Anime =
-    [
-        new Anime
-        {
-            Title = "轻音少女",
-            ImageUrl = "./images/动漫/轻音少女.png",
-            Rating = 5f,
-            Description = "只是觉得女孩子们之间真好啊",
-            UserReview = "S+++++"
-        },
+    [Inject] private HttpClient Http { get; set; } = default!;
 
-        new Anime
+    protected override async Task OnInitializedAsync()
+    {
+        var tomlContent = await Http.GetStringAsync("data/cartoon.toml");
+        using (var reader = new StringReader(tomlContent))
         {
-            Title = "请问你要来点兔子吗",
-            ImageUrl = "./images/动漫/请问你要来点兔子吗.png",
-            Rating = 5f,
-            Description = "在充满咖啡香气的兔子咖啡馆里，少女们展开了一段温馨治愈的故事",
-            UserReview = "S+++++"
-        },
+            var table = TOML.Parse(reader);
+            TomlArray animes = table["anime"] as TomlArray;
 
-        new Anime
-        {
-            Title = "悠哉日常大王",
-            ImageUrl = "./images/动漫/悠哉日常大王.png",
-            Rating = 5f,
-            Description = "描绘了乡村学校中少女们的悠闲日常，充满欢笑与温情",
-            UserReview = "S+++++"
-        },
-
-        new Anime
-        {
-            Title = "珈百璃的坠落",
-            ImageUrl = "./images/动漫/珈百璃的坠落.png",
-            Rating = 5f,
-            Description = "天使珈百璃来到人间后沉迷游戏，展开了一系列搞笑的故事。",
-            UserReview = "S+++"
-        },
-
-        new Anime
-        {
-            Title = "登山少女",
-            ImageUrl = "./images/动漫/向山进发.png",
-            Rating = 4.8f,
-            Description = "",
-            UserReview = "A+"
-        },
-
-        new Anime
-        {
-            Title = "孤独摇滚",
-            ImageUrl = "./images/动漫/孤独摇滚.png",
-            Rating = 4.9f,
-            Description = "社恐少女后藤一里组建乐队，在音乐中寻找自我的故事。",
-            UserReview = "S+++"
-        },
-
-        new Anime
-        {
-            Title = "放学后的海堤日记",
-            ImageUrl = "./images/动漫/放学后的海堤日记.png",
-            Rating = 4.7f,
-            Description = "钓鱼社团的日常",
-            UserReview = "A+"
-        },
-
-        new Anime
-        {
-            Title = "打了300年的史莱姆，不知不觉就练到了满级",
-            ImageUrl = "./images/动漫/史莱姆.png",
-            Rating = 4.8f,
-            Description = "",
-            UserReview = "A+"
-        },
-
-        new Anime
-        {
-            Title = "女孩的钓鱼慢活",
-            ImageUrl = "./images/动漫/女孩的钓鱼慢活.png",
-            Rating = 4.6f,
-            Description = "",
-            UserReview = "A"
-        },
-
-        new Anime
-        {
-            Title = "黄金拼图",
-            ImageUrl = "./images/动漫/黄金拼图.png",
-            Rating = 5f,
-            Description = "",
-            UserReview = "S+++"
-        },
-
-        new Anime
-        {
-            Title = "街角魔族",
-            ImageUrl = "./images/动漫/街角魔族.png",
-            Rating = 4.6f,
-            Description = "",
-            UserReview = "A+"
+            foreach (TomlTable animeEntry in animes)
+            {
+                var anime = new Anime
+                {
+                    Title = animeEntry["Title"],
+                    ImageUrl = animeEntry["ImageUrl"],
+                    Rating = (float)(double)animeEntry["Rating"], // 注意 float 需要显式转换
+                    Description = animeEntry["Description"],
+                    UserReview = animeEntry["UserReview"]
+                };
+                animeList.Add(anime);
+                FilteredAnimeList = animeList.ToList();
+            }
         }
-    ];
+    }
+
+    private readonly List<Anime> animeList = new();
 
     protected List<Anime> FilteredAnimeList { get; set; } = new();
-    
+
     protected override void OnInitialized()
     {
-        FilteredAnimeList = Anime.ToList();
+        FilteredAnimeList = animeList.ToList();
     }
 
     public void FilterAnime()
     {
-        var query = Anime.AsQueryable();
-        
+        var query = animeList.AsQueryable();
+
         if (!string.IsNullOrWhiteSpace(searchTerm))
         {
-            query = query.Where(a => 
+            query = query.Where(a =>
                 (a.Title != null && a.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)));
         }
-        
+
         query = SortOption switch
         {
             "TitleAsc" => query.OrderBy(a => a.Title),
@@ -148,7 +75,7 @@ public class CarToon_razor : ComponentBase
             "RatingAsc" => query.OrderBy(a => a.Rating),
             _ => query
         };
-        
+
         FilteredAnimeList = query.ToList();
     }
 
@@ -161,7 +88,6 @@ public class CarToon_razor : ComponentBase
     {
         searchTerm = string.Empty;
         SortOption = "TitleAsc";
-        FilteredAnimeList = Anime.ToList();
+        FilteredAnimeList = animeList.ToList();
     }
-   
 }
