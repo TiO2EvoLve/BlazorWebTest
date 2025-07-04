@@ -2,63 +2,180 @@
 @inherits CarToon_razor
 @using System.Linq
 
-<div class="anime-container">
-    <h1 class="Title">已看动漫评价</h1>
-    <div class="filter-section">
-        <div class="search-box">
-            <input type="text" @bind="searchTerm" placeholder="搜索动漫..." class="search-input"
-                   @oninput="HandleSearchInput"/>
-            <Button style="width: 80px;font-size: 15px" Color="Color.Success" IsOutline="true" Icon="fa-solid fa-font-awesome" Text="搜索" @onclick="FilterAnime"> </Button>
-            <Button style="width: 80px;font-size: 15px" Color="Color.Primary" IsOutline="true" Icon="fa-solid fa-font-awesome" Text="重置" @onclick="ResetFilters"> </Button>
-        </div>
-        <div class="sort-options">
-            <label>排序：</label>
-            <select @bind="SortOption" class="sort-select">
-                <option value="TitleAsc">标题 (A-Z)</option>
-                <option value="TitleDesc">标题 (Z-A)</option>
-                <option value="RatingDesc">评分 (高到低)</option>
-                <option value="RatingAsc">评分 (低到高)</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="grid-container">
-        @foreach (var anime in FilteredAnimeList)
-        {
-            <div class="anime-card">
-                <div class="card-header">
-                    <div class="image-container">
-                        <img src="@anime.ImageUrl" alt="@anime.Title"
-                             onerror="this.onerror=null;this.src='https://picsum.photos/338/450?random='+Math.random();"/>
-                    </div>
-                    <div class="rating-badge">
-                        @for (int i = 1; i <= 5; i++)
-                        {
-                            <span class="star @(i <= anime.Rating ? "filled" : "")">★</span>
-                        }
-                        <span class="rating-value">@anime.Rating.ToString("0.0")</span>
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    <h3 class="anime-title">@anime.Title</h3>
-                    <div class="anime-description">@anime.Description</div>
-
-                    <div class="user-review-section">
-                        <div class="review-label">我的评价:</div>
-                        <div class="user-review">@anime.UserReview</div>
-                    </div>
-                </div>
-            </div>
-        }
-    </div>
-
-    @if (!FilteredAnimeList.Any())
-    {
-        <div class="no-results">
-            <i class="no-results-icon">😢</i>
-            <h3>没有找到匹配的动漫</h3>
-            <p>尝试使用不同的搜索词或重置筛选条件</p>
-        </div>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#3B82F6',
+          secondary: '#EC4899',
+          neutral: {
+            100: '#F8FAFC',
+            200: '#E2E8F0',
+            300: '#CBD5E1',
+            700: '#334155',
+            900: '#0F172A'
+          }
+        },
+        fontFamily: {
+          inter: ['Inter', 'sans-serif'],
+        },
+      },
     }
+  }
+</script>
+<div class="font-inter bg-neutral-100 text-neutral-900 min-h-screen flex flex-col">
+  
+  <!-- 主内容区 -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+  <!-- 页面标题 -->
+  <div class="text-center mb-12">
+    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-neutral-900 mb-3">我的动漫评价</h2>
+    <p class="text-neutral-700 max-w-2xl mx-auto">记录每一部触动心灵的动漫作品，分享我的真实感受与评分</p>
+  </div>
+
+  <!-- 筛选和排序 -->
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 space-y-4 md:space-y-0">
+    <div class="flex gap-2 w-full md:w-auto">
+      <input @bind="searchTerm"
+             type="text"
+             placeholder="搜索动漫名称或关键词"
+             class="py-2 bg-white text-neutral-700 rounded-full text-sm font-medium border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-primary/50 w-full md:w-64 transition-colors" />
+      <button @onclick="FilterAnime"
+              class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors">
+        搜索
+      </button>
+      <button @onclick="ResetFilters"
+              class="px-4 py-2 bg-neutral-200 text-neutral-700 rounded-full text-sm font-medium hover:bg-neutral-300 transition-colors">
+        重置
+      </button>
+    </div>
+    
+    
+    <div class="flex items-center space-x-2">
+      <span class="text-neutral-700 text-sm">排序：</span>
+      <select @bind="SortOption"
+              class="bg-white border border-neutral-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50">
+        <option value="TitleAsc">标题 (A-Z)</option>
+        <option value="TitleDesc">标题 (Z-A)</option>
+        <option value="RatingDesc">评分 (高到低)</option>
+        <option value="RatingAsc">评分 (低到高)</option>
+      </select>
+    </div>
+  </div>
+  
+  <!-- 动漫卡片网格 -->
+  <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+    
+    @foreach (var anime in FilteredAnimeList)
+    {
+      <!-- 卡片 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
+        <div class="relative">
+          <img src="@anime.ImageUrl" class="w-full h-64 object-cover" alt="#">
+          <div class="rating-badge">
+            @for (int i = 1; i <= 5; i++)
+            {
+              <span class="star @(i <= anime.Rating ? "filled" : "")">★</span>
+            }
+            <span class="rating-value">@anime.Rating.ToString("0.0")</span>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2 line-clamp-1">@anime.Title</h3>
+          <p class="text-neutral-700 text-sm line-clamp-3 h-20">
+            @anime.Description</p>
+          <div class="user-review-section">
+            <div class="review-label">我的评价:<span>@anime.UserReview</span>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    }
+    
+  </div>
+  
+  @if (!FilteredAnimeList.Any())
+  {
+    <div class="text-center mt-12">
+      <i class="fa fa-frown text-4xl text-neutral-500 mb-4"></i>
+      <h3 class="text-xl font-semibold text-neutral-700">没有找到匹配的动漫</h3>
+      <p class="text-neutral-500">尝试使用不同的搜索词或重置筛选条件</p>
+    </div>
+  }
+  </main>
+
+<!-- 页脚 -->
+<footer class="bg-neutral-900 text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <i class="fa fa-play-circle text-primary text-2xl"></i>
+          <h3 class="text-xl font-bold">TiO2<span class="text-primary">EvoLve</span></h3>
+        </div>
+        <p class="text-neutral-400 text-sm">分享你的动漫热情，记录每一个感动瞬间</p>
+        <div class="flex space-x-4 mt-4">
+          <a href="#" class="text-neutral-400 hover:text-primary transition-colors">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="#" class="text-neutral-400 hover:text-primary transition-colors">
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a href="#" class="text-neutral-400 hover:text-primary transition-colors">
+            <i class="fa fa-youtube-play"></i>
+          </a>
+          <a href="#" class="text-neutral-400 hover:text-primary transition-colors">
+            <i class="fa fa-discord"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors">首页</a></li>
+          <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors">我的评价</a></li>
+          <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors">收藏</a></li>
+          <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors">排行榜</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-4">分类</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors">动作</a></li>
+          <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors">冒险</a></li>
+          <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors">喜剧</a></li>
+          <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors">剧情</a></li>
+          <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors">科幻</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-4">订阅更新</h4>
+        <p class="text-neutral-400 text-sm mb-4">获取最新的动漫评价和推荐</p>
+        <form class="flex">
+          <input type="email" placeholder="你的邮箱地址"
+                 class="bg-neutral-800 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-primary w-full">
+          <button type="submit"
+                  class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-r-lg transition-colors ">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-t border-neutral-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-neutral-500 text-sm">© 2025 AnimeVerse. 保留所有权利</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-neutral-500 hover:text-primary text-sm transition-colors">隐私政策</a>
+        <a href="#" class="text-neutral-500 hover:text-primary text-sm transition-colors">使用条款</a>
+        <a href="#" class="text-neutral-500 hover:text-primary text-sm transition-colors">联系我们</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </div>
