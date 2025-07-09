@@ -38,7 +38,7 @@ public class CarToon_razor : ComponentBase
                 {
                     Title = animeEntry["Title"],
                     ImageUrl = animeEntry["ImageUrl"],
-                    Rating = (float)(double)animeEntry["Rating"], // 注意 float 需要显式转换
+                    Rating = (float)(double)animeEntry["Rating"],
                     Description = animeEntry["Description"],
                     UserReview = animeEntry["UserReview"]
                 };
@@ -49,7 +49,6 @@ public class CarToon_razor : ComponentBase
     }
 
     private readonly List<Anime> animeList = new();
-
     protected List<Anime> FilteredAnimeList { get; set; } = new();
 
     protected override void OnInitialized()
