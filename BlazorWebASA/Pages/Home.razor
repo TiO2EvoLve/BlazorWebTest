@@ -1,4 +1,6 @@
 ﻿@page "/"
+@using Tommy
+@using Web.Entitys
 @inherits Home_razor
 @inject IJSRuntime JS
 
@@ -18,28 +20,29 @@
             <div>
                 <h2 style="font-size: 25px;font-family: Roboto,serif">TiO2 EvoLve</h2>
                 <p class="text-gray-500 p-2">欢迎来到我的空间</p>
-                <p style="color: #fa60a0;font-size:medium">网站已经运行了 @currentTime.Days 天 @currentTime.Hours 时 @currentTime.Minutes 分 @currentTime.Seconds 秒</p>
+                <p style="color: #fa60a0;font-size:medium">
+                    网站已经运行了 @currentTime.Days 天 @currentTime.Hours 时 @currentTime.Minutes 分 @currentTime.Seconds 秒</p>
             </div>
         </article>
 
         <!-- 博客文章 -->
         <article class="card">
-            <h3>正在学习</h3>
+            <h1>正在学习</h1>
             <p class="project-date">进度条代表偏重性</p>
-        <div class="skills-container">
-            @foreach (var skill in Skills)
-            {
-                <div class="skill-item @skill.Class">
-                    <img src="@skill.Img" alt="" style="width: 50px;height: 50px"/>
-                    <div class="skill-content">
-                        <div class="skill-name">@skill.Name</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: @skill.Progress%;"></div>
+            <div class="skills-container">
+                @foreach (var skill in Skills)
+                {
+                    <div class="skill-item @skill.Class">
+                        <img src="@skill.Img" alt="" style="width: 50px;height: 50px"/>
+                        <div class="skill-content">
+                            <div class="skill-name">@skill.Name</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: @skill.Progress%;"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
-        </div>
+                }
+            </div>
         </article>
 
         <article class="container2">
@@ -63,89 +66,28 @@
         </article>
 
         <article class="container3">
-            <article class="project-card">
-                <img src="./images/room.png" class="project-image" alt="">
-                <div class="project-info">
-                    <h2 class="project-title">室内场景</h2>
-                    <p class="project-date">2023-02-24</p>
-                    <p class="project-category">起源二 / 地图</p>
-                </div>
-                <div class="action-btns">
-                    <button class="like-btn">❤️ 1.3w</button>
-                    <a target="_blank" href="https://www.bilibili.com/video/BV1MX4y197sx" class="view-btn">瞧一瞧</a>
-                </div>
-            </article>
+            @foreach (var work in workList)
+            {
+                <article class="project-card">
+                    <img src=@work.img class="project-image" alt="">
+                    <div class="project-info">
+                        <h2 class="project-title">@work.title</h2>
+                        <p class="project-date">@work.date.ToString("yyyy-MM-dd")</p>
+                        <p class="project-category">@work.category</p>
+                    </div>
+                    <div class="action-btns">
+                        <button class="like-btn">❤️ @work.like</button>
+                        <a target="_blank" href=@work.link class="view-btn">瞧一瞧</a>
+                    </div>
+                </article>
+            }
 
-            <article class="project-card">
-                <img src="./images/backroom.png" class="project-image" alt="">
-                <div class="project-info">
-                    <h2 class="project-title">后室场景</h2>
-                    <p class="project-date">2024-07-09</p>
-                    <p class="project-category">起源二 / 游戏</p>
-                </div>
-                <div class="action-btns">
-                    <button class="like-btn">❤️ 316</button>
-                    <a target="_blank" href="https://www.bilibili.com/video/BV1yb421n7NK" class="view-btn">瞧一瞧</a>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <img src="./images/touhou.png" class="project-image" alt="">
-                <div class="project-info">
-                    <h2 class="project-title">东方弹幕游戏</h2>
-                    <p class="project-date">2024-03-09</p>
-                    <p class="project-category">起源二 / 游戏</p>
-                </div>
-                <div class="action-btns">
-                    <button class="like-btn">❤️ 289</button>
-                    <a target="_blank" href="https://www.bilibili.com/video/BV17J4m1a7KJ" class="view-btn">瞧一瞧</a>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <img src="./images/pool.png" class="project-image" alt="">
-                <div class="project-info">
-                    <h2 class="project-title">池核场景</h2>
-                    <p class="project-date">2024-04-29</p>
-                    <p class="project-category">起源二 / 地图</p>
-                </div>
-                <div class="action-btns">
-                    <button class="like-btn">❤️ 1236</button>
-                    <a target="_blank" href="https://www.bilibili.com/video/BV1RH4y1G7wk" class="view-btn">瞧一瞧</a>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <img src="./images/toon.png" class="project-image" alt="">
-                <div class="project-info">
-                    <h2 class="project-title">三渲二shader</h2>
-                    <p class="project-date">2024-12-23</p>
-                    <p class="project-category">起源二 / shader</p>
-                </div>
-                <div class="action-btns">
-                    <button class="like-btn">❤️ 715</button>
-                    <a target="_blank" href="https://www.bilibili.com/video/BV1xxC5YeEtH" class="view-btn">瞧一瞧</a>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <img src="./images/plug.png" class="project-image" alt="">
-                <div class="project-info">
-                    <h2 class="project-title">模型导出插件</h2>
-                    <p class="project-date">2025-1-2</p>
-                    <p class="project-category">Blender / 插件</p>
-                </div>
-                <div class="action-btns">
-                    <button class="like-btn">❤️ 365</button>
-                    <a target="_blank" href="https://www.bilibili.com/video/BV14m66YeEFp" class="view-btn">瞧一瞧</a>
-                </div>
-            </article>
         </article>
-        
     </main>
 
     <!-- 侧边栏 -->
     <aside class="sidebar">
+        <!-- 外部链接 -->
         <div class="card">
             <h3>外部链接</h3>
             <br/>
@@ -164,7 +106,7 @@
                 </li>
             </ul>
         </div>
-
+        <!--个人信息 -->
         <div class="card">
             <h3>个人信息</h3>
             <br/>
@@ -172,7 +114,7 @@
             <p>💻 TiO2 EvoLve</p>
             <p>📧 3290158038@qq.com</p>
         </div>
-        
+        <!--开发设备 -->
         <div class="card">
             <h3 class="text-blue-600">开发设备</h3>
             <br/>
@@ -204,8 +146,9 @@
             </ul>
         </div>
     </aside>
-    
+
 </div>
+
 @code{
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -213,6 +156,33 @@
         if (firstRender)
         {
             await JS.InvokeVoidAsync("startSakura");
+        }
+    }
+
+    [Inject] private HttpClient Http { get; set; } = null!;
+    private List<Works> workList = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var tomlContent = await Http.GetStringAsync("data/works.toml");
+        using (var reader = new StringReader(tomlContent))
+        {
+            var table = TOML.Parse(reader);
+            TomlArray works = table["work"] as TomlArray;
+
+            foreach (TomlTable workEntry in works)
+            {
+                var work = new Works()
+                {
+                    img = workEntry["img"],
+                    title = workEntry["title"],
+                    date = workEntry["date"],
+                    category = workEntry["category"],
+                    like = workEntry["like"],
+                    link = workEntry["link"]
+                };
+                workList.Add(work);
+            }
         }
     }
 

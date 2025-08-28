@@ -22,7 +22,7 @@ public class CarToon_razor : ComponentBase
         }
     }
 
-    [Inject] private HttpClient Http { get; set; } = default!;
+    [Inject] private HttpClient Http { get; set; } = null!;
 
     protected override async Task OnInitializedAsync()
     {
