@@ -1,6 +1,6 @@
 ﻿@page "/"
 @inherits Home_razor
-
+@inject IJSRuntime JS
 
 <!-- 背景-->
 <div class="background">
@@ -16,8 +16,8 @@
         <article class="card profile-card">
             <img src="./images/logo.png" alt="Profile" class="profile-pic">
             <div>
-                <h2 style="font-size: 25px">TiO2 EvoLve</h2>
-                <p class="text-gray-500 p-2">一个热爱游戏开发的普通人</p>
+                <h2 style="font-size: 25px;font-family: Roboto,serif">TiO2 EvoLve</h2>
+                <p class="text-gray-500 p-2">欢迎来到我的空间</p>
                 <p style="color: #fa60a0;font-size:medium">网站已经运行了 @currentTime.Days 天 @currentTime.Hours 时 @currentTime.Minutes 分 @currentTime.Seconds 秒</p>
             </div>
         </article>
@@ -206,3 +206,14 @@
     </aside>
     
 </div>
+@code{
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("startSakura");
+        }
+    }
+
+}

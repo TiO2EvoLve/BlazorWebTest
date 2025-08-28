@@ -8,6 +8,7 @@ public class Home_razor : ComponentBase
     private readonly DateTime StartTime = new (2025,3,27);
     private DateTime NowTime => DateTime.Now;
 
+    
     protected override void OnInitialized()
     {
         currentTime = NowTime - StartTime;
@@ -25,8 +26,6 @@ public class Home_razor : ComponentBase
         public string Class { get; set; }
         public string Img { get; set; }
         public int Progress { get; set; }
-        
-        
     }
 
     public List<Skill> Skills = new()
