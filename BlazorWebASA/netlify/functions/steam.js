@@ -7,7 +7,8 @@ export async function handler(event, context) {
     }
 
     // 🔑 把 API Key 放在 Netlify 环境变量里（安全）
-    const apiKey = process.env.STEAM_API_KEY;
+    const apiKey = "1A2472A43F1FE76DF6CEABC658688E5B";
+    //const apiKey = process.env.STEAM_API_KEY;
 
     const url = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${apiKey}&steamids=${steamid}`;
 
