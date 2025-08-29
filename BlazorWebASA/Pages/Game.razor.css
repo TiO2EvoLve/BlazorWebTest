@@ -1,1 +1,15 @@
-﻿
+﻿.content-auto {
+    content-visibility: auto;
+}
+.bg-gradient-steam {
+    background: linear-gradient(to right, #1b2838, #2a475e);
+}
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+    transform: scale(1.03);
+}

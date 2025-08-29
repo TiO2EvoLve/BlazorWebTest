@@ -2,17 +2,185 @@
 @inherits Game_razor
 @inject HttpClient Http
 
-<h3>Steam API 调用示例</h3>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#171a21',
+                    secondary: '#2a475e',
+                    accent: '#66c0f4',
+                    neutral: '#c7d5e0',
+                    'neutral-dark': '#1b2838',
+                },
+                fontFamily: {
+                    inter: ['Inter', 'sans-serif'],
+                },
+            }
+        }
+    }
+</script>
 
-@if (player == null)
-{
-    <p><em>加载中...</em></p>
-}
-else
-{
-    <p><b>玩家昵称：</b> @player.PersonaName</p>
-    <img src="@player.AvatarFull" />
-}
+<div class="bg-neutral-dark text-neutral min-h-screen flex flex-col">
+    <!-- 主要内容 -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="bg-gradient-steam rounded-xl shadow-xl p-6 md:p-10 mb-8">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-shrink-0">
+                    <div class="relative rounded-lg overflow-hidden shadow-2xl border-2 border-accent/50 hover-scale">
+                        <img id="avatar-full" src="@player.AvatarFull" alt="用户大图头像"
+                             class="w-64 h-64 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+                            <div class="flex items-center justify-between">
+                                <span id="personaname"
+                                      class="text-white font-bold text-xl text-shadow">@player.SteamId</span>
+                                <span id="status-badge"
+                                      class="bg-gray-600 text-white text-xs px-2 py-1 rounded-full">离线</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-grow">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-secondary/30 backdrop-blur-sm rounded-lg p-5 shadow-lg">
+                            <h2 class="text-accent text-lg font-semibold mb-4 flex items-center">
+                                <i class="fa fa-user-circle mr-2"></i>基本信息
+                            </h2>
+                            <ul class="space-y-3">
+                                <li class="flex justify-between">
+                                    <span class="text-gray-300">Steam ID:</span>
+                                    <span id="steamid" class="font-medium">ID</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-gray-300">注册时间:</span>
+                                    <span id="timecreated" class="font-medium">时间</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-gray-300">最后登录:</span>
+                                    <span id="lastlogoff" class="font-medium">时间</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-gray-300">所在地区:</span>
+                                    <span id="location" class="font-medium">地区</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-secondary/30 backdrop-blur-sm rounded-lg p-5 shadow-lg">
+                            <h2 class="text-accent text-lg font-semibold mb-4 flex items-center">
+                                <i class="fa fa-cog mr-2"></i>账户状态
+                            </h2>
+                            <ul class="space-y-3">
+                                <li class="flex justify-between">
+                                    <span class="text-gray-300">个人资料:</span>
+                                    <span id="profile-state" class="font-medium">公开</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-gray-300">评论权限:</span>
+                                    <span id="comment-permission" class="font-medium">允许</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-gray-300">主群组:</span>
+                                    <span id="primary-clan" class="font-medium">群组ID</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-gray-300">状态标志:</span>
+                                    <span id="state-flags" class="font-medium">标志</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex space-x-4">
+                        <a id="profile-url" href="#" target="_blank"
+                           class="bg-accent hover:bg-accent/80 text-primary text-black font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5">
+                            <i class="fa fa-external-link mr-2"></i>查看完整资料
+                        </a>
+                        <button
+                            style="color: #3D5D7B"
+                            class="hover:bg-secondary/80 text-white font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center shadow-lg hover:shadow-secondary/30 hover:-translate-y-0.5">
+                            <i class="fa fa-user-plus mr-2"></i>添加好友
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 最近玩过的游戏 -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                <i class="fa fa-gamepad text-accent mr-2"></i>最近玩过的游戏
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <!-- 游戏卡片1 -->
+                <div class="bg-secondary/30 rounded-lg overflow-hidden shadow-lg hover-scale">
+                    <img src="https://picsum.photos/400/200?random=1" alt="游戏封面" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-white text-lg mb-1">游戏名称</h3>
+                        <p class="text-gray-400 text-sm mb-2">最近玩了 12 小时</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent text-sm">上次玩: 2天前</span>
+                            <button
+                                class="bg-accent/20 hover:bg-accent/40 text-accent px-3 py-1 rounded-md text-sm transition-colors duration-300">
+                                查看详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 游戏卡片2 -->
+                <div class="bg-secondary/30 rounded-lg overflow-hidden shadow-lg hover-scale">
+                    <img src="https://picsum.photos/400/200?random=2" alt="游戏封面" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-white text-lg mb-1">游戏名称</h3>
+                        <p class="text-gray-400 text-sm mb-2">最近玩了 8 小时</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent text-sm">上次玩: 5天前</span>
+                            <button
+                                class="bg-accent/20 hover:bg-accent/40 text-accent px-3 py-1 rounded-md text-sm transition-colors duration-300">
+                                查看详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 游戏卡片3 -->
+                <div class="bg-secondary/30 rounded-lg overflow-hidden shadow-lg hover-scale">
+                    <img src="https://picsum.photos/400/200?random=3" alt="游戏封面" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-white text-lg mb-1">游戏名称</h3>
+                        <p class="text-gray-400 text-sm mb-2">最近玩了 3 小时</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent text-sm">上次玩: 1周前</span>
+                            <button
+                                class="bg-accent/20 hover:bg-accent/40 text-accent px-3 py-1 rounded-md text-sm transition-colors duration-300">
+                                查看详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 游戏卡片4 -->
+                <div class="bg-secondary/30 rounded-lg overflow-hidden shadow-lg hover-scale">
+                    <img src="https://picsum.photos/400/200?random=4" alt="游戏封面" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-white text-lg mb-1">游戏名称</h3>
+                        <p class="text-gray-400 text-sm mb-2">最近玩了 5 小时</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent text-sm">上次玩: 2周前</span>
+                            <button
+                                class="bg-accent/20 hover:bg-accent/40 text-accent px-3 py-1 rounded-md text-sm transition-colors duration-300">
+                                查看详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
 
 @code {
     private Player? player;
@@ -43,4 +211,5 @@ else
         public string PersonaName { get; set; } = "";
         public string AvatarFull { get; set; } = "";
     }
+
 }
