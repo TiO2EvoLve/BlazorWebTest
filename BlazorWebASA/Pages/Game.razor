@@ -1,4 +1,46 @@
 @page "/game"
 @inherits Game_razor
+@inject HttpClient Http
 
+<h3>Steam API 调用示例</h3>
 
+@if (player == null)
+{
+    <p><em>加载中...</em></p>
+}
+else
+{
+    <p><b>玩家昵称：</b> @player.PersonaName</p>
+    <img src="@player.AvatarFull" />
+}
+
+@code {
+    private Player? player;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // 调用 Netlify Function 而不是直接请求 Steam
+        var result = await Http.GetFromJsonAsync<SteamResponse>(
+            "/.netlify/functions/steam?steamid=76561198325902444"
+        );
+
+        player = result?.Response?.Players?.FirstOrDefault();
+    }
+
+    public class SteamResponse
+    {
+        public SteamResponseData Response { get; set; } = new();
+    }
+
+    public class SteamResponseData
+    {
+        public List<Player> Players { get; set; } = new();
+    }
+
+    public class Player
+    {
+        public string SteamId { get; set; } = "";
+        public string PersonaName { get; set; } = "";
+        public string AvatarFull { get; set; } = "";
+    }
+}

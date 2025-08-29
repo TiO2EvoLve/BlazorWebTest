@@ -3,7 +3,7 @@ img = "./images/room.png"
 title = "室内场景"
 date = 2023-02-24
 category = "起源二 / 地图"
-like = 13
+like = 208
 link = "https://www.bilibili.com/video/BV1MX4y197sx"
 
 [[work]]
@@ -11,7 +11,7 @@ img = "./images/backroom.png"
 title = "后室场景"
 date = 2024-07-09
 category = "起源二 / 游戏"
-like = 316
+like = 12
 link = "https://www.bilibili.com/video/BV1yb421n7NK"
 
 [[work]]
@@ -19,7 +19,7 @@ img = "./images/touhou.png"
 title = "东方弹幕游戏"
 date = 2024-03-09
 category = "起源二 / 游戏"
-like = 289
+like = 14
 link = "https://www.bilibili.com/video/BV17J4m1a7KJ"
 
 [[work]]
@@ -27,7 +27,7 @@ img = "./images/pool.png"
 title = "池核场景"
 date = 2024-04-29
 category = "起源二 / 地图"
-like = 1326
+like = 35
 link = "https://www.bilibili.com/video/BV1RH4y1G7wk"
 
 [[work]]
@@ -35,7 +35,7 @@ img = "./images/toon.png"
 title = "三渲二shader"
 date = 2024-12-23
 category = "起源二 / shade"
-like = 715
+like = 23
 link = "https://www.bilibili.com/video/BV1xxC5YeEtH"
 
 [[work]]
@@ -43,5 +43,13 @@ img = "./images/plug.png"
 title = "模型导出插件"
 date = 2025-01-02
 category = "Blender / 插件"
-like = 365
+like = 25
 link = "https://www.bilibili.com/video/BV14m66YeEFp"
+
+[[work]]
+img = "./images/plug.png"
+title = "风格化场景"
+date = 2025-01-02
+category = "虚幻5 / 场景"
+like = 25
+link = ""

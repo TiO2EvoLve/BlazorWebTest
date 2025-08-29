@@ -27,7 +27,7 @@ public class Home_razor : ComponentBase
         new() { Name = "C#", Class = "green", Img = "./images/Icon/C2.png", Progress = 95 },
         new() { Name = "Blender", Class = "blue", Img = "./images/Icon/Blender.png", Progress = 60 },
         new() { Name = "Python", Class = "purply", Img = "./images/Icon/python.png", Progress = 40 },
-        new() { Name = "PS", Class = "orange", Img = "./images/Icon/ps.png", Progress = 20 },
+        new() { Name = "Pt", Class = "orange", Img = "./images/Icon/pt.png", Progress = 20 },
         new() { Name = "S&box", Class = "yellow", Img = "./images/Icon/sbox.png", Progress = 50 },
     ];
 

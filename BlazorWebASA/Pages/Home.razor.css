@@ -176,14 +176,14 @@ li a:hover{
 /*//////////*/
 
 .container3 {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    justify-items: center;
+    align-items: stretch;
 }
 
 .project-card {
-    flex: 1 1 300px;
     background: white;
     border-radius: 20px;
     border: 3px solid #eee;
@@ -191,6 +191,9 @@ li a:hover{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+    max-width: 340px;
+    box-sizing: border-box;
 }
 .project-card:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
