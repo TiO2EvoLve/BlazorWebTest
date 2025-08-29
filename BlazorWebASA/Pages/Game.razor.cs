@@ -1,5 +1,4 @@
-﻿using System.Net.Http;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 using Microsoft.AspNetCore.Components;
 using Web.Entitys;
 
@@ -7,6 +6,7 @@ namespace Web.Pages;
 
 public class Game_razor: ComponentBase
 {
+
     protected Player? player;
     [Inject]
     private HttpClient Http { get; set; } = default!;
@@ -53,6 +53,6 @@ public class Game_razor: ComponentBase
         return dateTime.ToString("yyyy-MM-dd");
         
     }
-
+    
     
 }
