@@ -1,4 +1,5 @@
 @page "/game"
+@using Web.Entitys
 @inherits Game_razor
 @inject HttpClient Http
 
@@ -47,7 +48,7 @@ else
                                 <span id="personaname"
                                       class="text-white font-bold text-xl text-shadow">@player.PersonaName</span>
                                 <span id="status-badge"
-                                      class="bg-gray-600 text-white text-xs px-2 py-1 rounded-full">离线</span>
+                                      class="bg-gray-600 text-white text-xs px-2 py-1 rounded-full">@state[player.Personastate]</span>
                             </div>
                         </div>
                     </div>
@@ -66,15 +67,15 @@ else
                                 </li>
                                 <li class="flex justify-between">
                                     <span class="text-gray-300">注册时间:</span>
-                                    <span id="timecreated" class="font-medium">时间</span>
+                                    <span id="timecreated" class="font-medium">@GetTime(player.Timecreated)</span>
                                 </li>
                                 <li class="flex justify-between">
                                     <span class="text-gray-300">最后登录:</span>
-                                    <span id="lastlogoff" class="font-medium">时间</span>
+                                    <span id="lastlogoff" class="font-medium">@GetTime(player.Lastlogoff)</span>
                                 </li>
                                 <li class="flex justify-between">
                                     <span class="text-gray-300">所在地区:</span>
-                                    <span id="location" class="font-medium">地区</span>
+                                    <span id="location" class="font-medium">@player.Loccountrycode</span>
                                 </li>
                             </ul>
                         </div>
@@ -105,15 +106,15 @@ else
                     </div>
 
                     <div class="mt-6 flex space-x-4">
-                        <a id="profile-url" href="#" target="_blank"
+                        <a id="profile-url" href="@player.Profileurl" target="_blank"
                            class="bg-accent hover:bg-accent/80 text-primary text-black font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5">
                             <i class="fa fa-external-link mr-2"></i>查看完整资料
                         </a>
-                        <button
-                            style="color: #3D5D7B"
-                            class="hover:bg-secondary/80 text-white font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center shadow-lg hover:shadow-secondary/30 hover:-translate-y-0.5">
+                        <a
+                            href="@player.Profileurl"
+                            class="color-secondary hover:bg-secondary/80 text-white font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center shadow-lg hover:shadow-secondary/30 hover:-translate-y-0.5">
                             <i class="fa fa-user-plus mr-2"></i>添加好友
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -217,12 +218,6 @@ else
     {
         public List<Player> Players { get; set; } = new();
     }
-
-    public class Player
-    {
-        public string SteamId { get; set; } = "";
-        public string PersonaName { get; set; } = "";
-        public string AvatarFull { get; set; } = "";
-    }
+    
 
 }
