@@ -20,6 +20,17 @@
         }
     }
 </script>
+if(@player == null)
+{
+<div class="flex items-center justify-center min-h-screen bg-neutral-dark text-neutral">
+    <div class="text-center">
+        <div class="loader mb-4"></div>
+        <p class="text-lg">正在加载用户数据...</p>
+    </div>
+</div>
+}
+else
+{
 
 <div class="bg-neutral-dark text-neutral min-h-screen flex flex-col">
     <!-- 主要内容 -->
@@ -181,6 +192,7 @@
     </main>
 </div>
 
+}
 
 @code {
     private Player? player;
