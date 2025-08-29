@@ -31,84 +31,84 @@
 }
 else
 {
-<div class="bg-neutral-dark text-neutral min-h-screen flex flex-col">
+<div class="bg-white text-gray-900 min-h-screen flex flex-col">
     <!-- 主要内容 -->
-    <main class="flex-grow container mx-auto px-4 py-8">
-        <div class="bg-gradient-steam rounded-xl shadow-xl p-6 md:p-10 mb-8">
-            <div class="flex flex-col md:flex-row items-center gap-8">
+    <main class="flex-grow container mx-auto px-2 py-6">
+        <div class="bg-white rounded-xl p-4 md:p-6 mb-6 border border-gray-200">
+            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6">
                 <div class="flex-shrink-0">
-                    <div class="relative rounded-lg overflow-hidden shadow-2xl border-2 border-accent/50 hover-scale">
+                    <div class="relative rounded-lg overflow-hidden border-2 border-accent/50">
                         <img id="avatar-full" src="@player.AvatarFull" alt="用户大图头像"
-                             class="w-64 h-64 object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+                             class="w-32 h-32 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
                             <div class="flex items-center justify-between">
                                 <span id="personaname"
-                                      class="text-white font-bold text-xl text-shadow">@player.PersonaName</span>
+                                      class="text-gray-900 font-bold text-base text-shadow">@player.PersonaName</span>
                                 <span id="status-badge"
-                                      class="bg-gray-600 text-white text-xs px-2 py-1 rounded-full">@state[player.Personastate]</span>
+                                      class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">@state[player.Personastate]</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex-grow">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-secondary/30 backdrop-blur-sm rounded-lg p-5 shadow-lg">
-                            <h2 class="text-accent text-lg font-semibold mb-4 flex items-center">
+                <div class="flex-grow w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="bg-gray-50 rounded-lg p-3">
+                            <h2 class="text-accent text-base font-semibold mb-2 flex items-center">
                                 <i class="fa fa-user-circle mr-2"></i>基本信息
                             </h2>
-                            <ul class="space-y-3">
+                            <ul class="space-y-2 text-sm">
                                 <li class="flex justify-between">
-                                    <span class="text-gray-300">Steam ID:</span>
+                                    <span class="text-gray-500">Steam ID:</span>
                                     <span id="steamid" class="font-medium">@player.SteamId</span>
                                 </li>
                                 <li class="flex justify-between">
-                                    <span class="text-gray-300">注册时间:</span>
+                                    <span class="text-gray-500">注册时间:</span>
                                     <span id="timecreated" class="font-medium">@GetTime(player.Timecreated)</span>
                                 </li>
                                 <li class="flex justify-between">
-                                    <span class="text-gray-300">最后登录:</span>
+                                    <span class="text-gray-500">最后登录:</span>
                                     <span id="lastlogoff" class="font-medium">@GetTime(player.Lastlogoff)</span>
                                 </li>
                                 <li class="flex justify-between">
-                                    <span class="text-gray-300">所在地区:</span>
+                                    <span class="text-gray-500">所在地区:</span>
                                     <span id="location" class="font-medium">@player.Loccountrycode</span>
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="bg-secondary/30 backdrop-blur-sm rounded-lg p-5 shadow-lg">
-                            <h2 class="text-accent text-lg font-semibold mb-4 flex items-center">
+                        <div class="bg-gray-50 rounded-lg p-3">
+                            <h2 class="text-accent text-base font-semibold mb-2 flex items-center">
                                 <i class="fa fa-cog mr-2"></i>账户状态
                             </h2>
-                            <ul class="space-y-3">
+                            <ul class="space-y-2 text-sm">
                                 <li class="flex justify-between">
-                                    <span class="text-gray-300">个人资料:</span>
+                                    <span class="text-gray-500">个人资料:</span>
                                     <span id="profile-state" class="font-medium">公开</span>
                                 </li>
                                 <li class="flex justify-between">
-                                    <span class="text-gray-300">评论权限:</span>
+                                    <span class="text-gray-500">评论权限:</span>
                                     <span id="comment-permission" class="font-medium">允许</span>
                                 </li>
                                 <li class="flex justify-between">
-                                    <span class="text-gray-300">主群组:</span>
+                                    <span class="text-gray-500">主群组:</span>
                                     <span id="primary-clan" class="font-medium">群组ID</span>
                                 </li>
                                 <li class="flex justify-between">
-                                    <span class="text-gray-300">状态标志:</span>
+                                    <span class="text-gray-500">状态标志:</span>
                                     <span id="state-flags" class="font-medium">标志</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="mt-6 flex space-x-4">
+                    <div class="mt-4 flex space-x-2">
                         <a id="profile-url" href="@player.Profileurl" target="_blank"
-                           class="bg-accent hover:bg-accent/80 text-primary text-black font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5">
+                           class="bg-accent hover:bg-accent/80 text-white font-bold py-1.5 px-4 rounded-md transition-all duration-300 flex items-center">
                             <i class="fa fa-external-link mr-2"></i>查看完整资料
                         </a>
                         <a href="@player.Profileurl"
-                            class="color-secondary hover:bg-secondary/80 text-white font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center shadow-lg hover:shadow-secondary/30 hover:-translate-y-0.5">
+                            class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1.5 px-4 rounded-md transition-all duration-300 flex items-center">
                             <i class="fa fa-user-plus mr-2"></i>添加好友
                         </a>
                     </div>

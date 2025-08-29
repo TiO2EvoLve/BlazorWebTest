@@ -10,9 +10,9 @@ public class Game_razor: ComponentBase
     protected Player? player;
     [Inject]
     private HttpClient Http { get; set; } = default!;
-    public Dictionary<int,string> state= new ()
+    protected readonly Dictionary<int,string> state= new ()
     {
-        {0,"离线" },
+        {0,"离线" }, 
         {1,"在线" },
         {2,"忙碌" },
         {3,"离开" },
@@ -27,7 +27,7 @@ public class Game_razor: ComponentBase
         var result = await Http.GetFromJsonAsync<SteamResponse>(
             "/.netlify/functions/steam?steamid=76561198325902444"
         );
-
+        
         player = result?.Response?.Players?.FirstOrDefault();
     }
 
