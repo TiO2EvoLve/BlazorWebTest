@@ -20,7 +20,8 @@
         }
     }
 </script>
-if(@player == null)
+
+@if(@player == null)
 {
 <div class="flex items-center justify-center min-h-screen bg-neutral-dark text-neutral">
     <div class="text-center">
@@ -44,7 +45,7 @@ else
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
                             <div class="flex items-center justify-between">
                                 <span id="personaname"
-                                      class="text-white font-bold text-xl text-shadow">@player.SteamId</span>
+                                      class="text-white font-bold text-xl text-shadow">@player.PersonaName</span>
                                 <span id="status-badge"
                                       class="bg-gray-600 text-white text-xs px-2 py-1 rounded-full">离线</span>
                             </div>
@@ -61,7 +62,7 @@ else
                             <ul class="space-y-3">
                                 <li class="flex justify-between">
                                     <span class="text-gray-300">Steam ID:</span>
-                                    <span id="steamid" class="font-medium">ID</span>
+                                    <span id="steamid" class="font-medium">@player.SteamId</span>
                                 </li>
                                 <li class="flex justify-between">
                                     <span class="text-gray-300">注册时间:</span>
