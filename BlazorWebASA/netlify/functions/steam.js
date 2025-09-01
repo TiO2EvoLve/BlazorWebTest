@@ -1,27 +1,32 @@
-﻿// netlify/functions/steam.js
+﻿const fetch = require('node-fetch');
 
-export async function handler(event, context) {
-    const steamid = event.queryStringParameters.steamid;
-    if (!steamid) {
-        return { statusCode: 400, body: "Missing steamid" };
-    }
+exports.handler = async function(event, context) {
+  // 读取环境变量
+  const apiKey = process.env.STEAM_API_KEY;
+  const { steamid } = event.queryStringParameters;
 
-    // 🔑 把 API Key 放在 Netlify 环境变量里（安全）
-    const apiKey = "1A2472A43F1FE76DF6CEABC658688E5B";
-    //const apiKey = process.env.STEAM_API_KEY;
+  if (!steamid) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: 'Missing steamid' })
+    };
+  }
 
-    const url = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${apiKey}&steamids=${steamid}`;
+  // 构造 Steam API 请求
+  const url = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${apiKey}&steamids=${steamid}`;
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return {
+      statusCode: 200,
+      body: JSON.stringify(data)
+    };
+  } catch (err) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Steam API request failed' })
+    };
+  }
+};
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify(data),
-            headers: { "Content-Type": "application/json" }
-        };
-    } catch (err) {
-        return { statusCode: 500, body: "Error: " + err.message };
-    }
-}

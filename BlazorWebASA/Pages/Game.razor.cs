@@ -23,12 +23,12 @@ public class Game_razor: ComponentBase
 
     protected override async Task OnInitializedAsync()
     {
-        // 调用 Netlify Function 而不是直接请求 Steam
+        //获取Steam信息
         var result = await Http.GetFromJsonAsync<SteamResponse>(
             "/.netlify/functions/steam?steamid=76561198325902444"
         );
-        
         player = result?.Response?.Players?.FirstOrDefault();
+        
     }
 
     public class SteamResponse
