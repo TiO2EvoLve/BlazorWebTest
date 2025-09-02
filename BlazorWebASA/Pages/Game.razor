@@ -197,27 +197,7 @@ else
 }
 
 @code {
-    private Player? player;
-
-    protected override async Task OnInitializedAsync()
-    {
-        // 调用 Netlify Function 而不是直接请求 Steam
-        var result = await Http.GetFromJsonAsync<SteamResponse>(
-            "/.netlify/functions/steam?steamid=76561198325902444"
-        );
-
-        player = result?.Response?.Players?.FirstOrDefault();
-    }
-
-    public class SteamResponse
-    {
-        public SteamResponseData Response { get; set; } = new();
-    }
-
-    public class SteamResponseData
-    {
-        public List<Player> Players { get; set; } = new();
-    }
+   
     
 
 }
