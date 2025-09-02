@@ -1,17 +1,24 @@
 {
   "name": "blazorwebtest",
   "version": "1.0.0",
-  "description": "",
+  "description": "这是一个基于 Blazor WebAssembly 的 Web 应用程序项目。",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TiO2EvoLve/BlazorWebTest.git"
+    "url": "git+https://github.com/TiO2EvoLve/BlazorWebTest.git"
   },
   "private": true,
   "dependencies": {
-    "node-fetch": "^3.3.2"
-  }
+    "node-fetch": "^2.7.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TiO2EvoLve/BlazorWebTest/issues"
+  },
+  "homepage": "https://github.com/TiO2EvoLve/BlazorWebTest#readme"
 }
