@@ -8,7 +8,7 @@ public class Game_razor: ComponentBase
 {
 
     protected Player? player;
-    protected List<Games>? games = new();
+    protected List<Games>? games;
     [Inject]
     private HttpClient Http { get; set; } = default!;
     protected readonly Dictionary<int,string> state= new ()
@@ -33,7 +33,7 @@ public class Game_razor: ComponentBase
         var gameresult = await Http.GetFromJsonAsync<GameResponse>(
             "/.netlify/functions/latelygame?steamid=76561198325902444"
         );
-        games = gameresult?.gameResponse?.games;
+        games = gameresult?.Response?.games;
     }
 
     

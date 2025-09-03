@@ -10,7 +10,7 @@ public class Games
 
 public class GameResponse
 {
-    public GameResponseData gameResponse { get; set; } = new();
+    public GameResponseData Response { get; set; } = new();
 }
 
 public class GameResponseData
