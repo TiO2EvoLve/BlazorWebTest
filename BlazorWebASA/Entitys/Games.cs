@@ -4,8 +4,8 @@ public class Games
 {
     public string appid;
     public string name;
-    public string playtime_2weeks;
-    public string playtime_foreve;
+    public double playtime_2weeks;
+    public double playtime_foreve;
 }
 
 public class GameResponse

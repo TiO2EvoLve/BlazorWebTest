@@ -33,7 +33,23 @@ public class Game_razor: ComponentBase
         var gameresult = await Http.GetFromJsonAsync<GameResponse>(
             "/.netlify/functions/latelygame?steamid=76561198325902444"
         );
-        games = gameresult?.Response?.games;
+        games = gameresult?.Response?.games ?? new List<Games>
+        {
+            new Games
+            {
+                appid = "0",
+                name = "CS2",
+                playtime_2weeks = 1000,
+                playtime_foreve = 1000
+            },
+            new Games
+            {
+                appid = "10",
+                name = "L4D2",
+                playtime_2weeks = 2000,
+                playtime_foreve = 2000
+            },
+        };
     }
 
     
