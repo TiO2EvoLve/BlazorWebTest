@@ -13,7 +13,7 @@ exports.handler = async function(event, context) {
     }
 
     // 构造 Steam API 请求
-    const url = `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1/?key=${apiKey}&steamid=${steamid}&count=5`;
+    const url = `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1/?key=${apiKey}&steamid=${steamid}&count=4`;
 
     try {
         const response = await fetch(url);
