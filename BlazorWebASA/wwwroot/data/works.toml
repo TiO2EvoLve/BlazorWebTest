@@ -2,15 +2,23 @@
 img = "./images/room.png"
 title = "室内场景"
 date = 2023-02-24
-category = "起源二 / 地图"
+category = "S&Box / 地图"
 like = 208
 link = "https://www.bilibili.com/video/BV1MX4y197sx"
+
+[[work]]
+img = "./images/cs2.png"
+title = "CS2竞技地图(废弃)"
+date = 2023-11-25
+category = "CS2 / 地图"
+like = 110
+link = "https://www.bilibili.com/video/BV1y64y1j71k/"
 
 [[work]]
 img = "./images/backroom.png"
 title = "后室场景"
 date = 2024-07-09
-category = "起源二 / 游戏"
+category = "S&Box / 游戏"
 like = 12
 link = "https://www.bilibili.com/video/BV1yb421n7NK"
 
@@ -18,7 +26,7 @@ link = "https://www.bilibili.com/video/BV1yb421n7NK"
 img = "./images/touhou.png"
 title = "东方弹幕游戏"
 date = 2024-03-09
-category = "起源二 / 游戏"
+category = "S&Box / 游戏"
 like = 14
 link = "https://www.bilibili.com/video/BV17J4m1a7KJ"
 
@@ -26,7 +34,7 @@ link = "https://www.bilibili.com/video/BV17J4m1a7KJ"
 img = "./images/pool.png"
 title = "池核场景"
 date = 2024-04-29
-category = "起源二 / 地图"
+category = "CS2 / 地图"
 like = 35
 link = "https://www.bilibili.com/video/BV1RH4y1G7wk"
 
@@ -34,7 +42,7 @@ link = "https://www.bilibili.com/video/BV1RH4y1G7wk"
 img = "./images/toon.png"
 title = "三渲二shader"
 date = 2024-12-23
-category = "起源二 / shade"
+category = "S&Box / shade"
 like = 23
 link = "https://www.bilibili.com/video/BV1xxC5YeEtH"
 
@@ -47,9 +55,17 @@ like = 25
 link = "https://www.bilibili.com/video/BV14m66YeEFp"
 
 [[work]]
-img = "./images/plug.png"
+img = "./images/toonscene.png"
 title = "风格化场景"
-date = 2025-01-02
+date = 2025-07-02
 category = "虚幻5 / 场景"
-like = 25
-link = ""
+like = 13
+link = "https://www.bilibili.com/video/BV1WBMQzoEqN/"
+
+[[work]]
+img = "./images/wpf.png"
+title = "自动化材质创建工具"
+date = 2025-08-02
+category = "C# / WPF"
+like = 15
+link = "https://www.bilibili.com/video/BV1W6htzmEGy/"
