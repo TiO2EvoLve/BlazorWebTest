@@ -34,6 +34,19 @@ public class Game_razor: ComponentBase
             "/.netlify/functions/latelygame?steamid=76561198325902444"
         );
         games = gameresult?.Response?.games;
+        //获取游戏大图
+        // 再补充封面
+        foreach (var g in games)
+        {
+            var storeData = await Http.GetFromJsonAsync<Dictionary<string, AppDetailsResponse>>(
+                $"/.netlify/functions/storecontent?storeid={g.appid}"
+            );
+
+            if (storeData != null && storeData.TryGetValue(g.appid.ToString(), out var app) && app.success)
+            {
+                g.HeaderImage = app.data.header_image;
+            }
+        }
        
     }
     public string GetTime(double time)
