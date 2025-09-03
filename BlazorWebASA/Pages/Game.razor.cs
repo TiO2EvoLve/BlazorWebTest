@@ -29,26 +29,27 @@ public class Game_razor: ComponentBase
             "/.netlify/functions/steam?steamid=76561198325902444"
         );
         player = result?.Response?.Players?.FirstOrDefault();
-        //获取最近游戏信息
-        var gameresult = await Http.GetFromJsonAsync<GameResponse>(
-            "/.netlify/functions/latelygame?steamid=76561198325902444"
-        );
-        games = gameresult?.Response?.games ?? new List<Games>
+        // //获取最近游戏信息
+        // var gameresult = await Http.GetFromJsonAsync<GameResponse>(
+        //     "/.netlify/functions/latelygame?steamid=76561198325902444"
+        // );
+        // games = gameresult?.Response?.games;
+        games = new List<Games>
         {
             new Games
             {
-                appid = "0",
-                name = "CS2",
-                playtime_2weeks = 1000,
-                playtime_foreve = 1000
+                appid = "730",
+                name = "Counter-Strike: Global Offensive",
+                playtime_2weeks = 120,
+                playtime_foreve = 1500
             },
             new Games
             {
-                appid = "10",
-                name = "L4D2",
-                playtime_2weeks = 2000,
-                playtime_foreve = 2000
-            },
+                appid = "440",
+                name = "Team Fortress 2",
+                playtime_2weeks = 60,
+                playtime_foreve = 800
+            }
         };
     }
 
