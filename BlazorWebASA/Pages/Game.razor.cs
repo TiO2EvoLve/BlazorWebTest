@@ -36,9 +36,6 @@ public class Game_razor: ComponentBase
         games = gameresult?.Response?.games;
        
     }
-
-    
-
     public string GetTime(double time)
     {
         

@@ -2,10 +2,10 @@
 
 public class Games
 {
-    public string appid;
-    public string name;
-    public double playtime_2weeks;
-    public double playtime_foreve;
+    public int appid { get; set; }
+    public string name { get; set; }
+    public int playtime_2weeks { get; set; }
+    public int playtime_forever { get; set; }
 }
 
 public class GameResponse
