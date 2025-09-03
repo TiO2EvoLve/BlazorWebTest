@@ -11,3 +11,12 @@ public class Player
     public double Timecreated { get; set; }
     public string Loccountrycode { get; set; }
 }
+public class SteamResponse
+{
+    public SteamResponseData Response { get; set; } = new();
+}
+
+public class SteamResponseData
+{
+    public List<Player> Players { get; set; } = new();
+}

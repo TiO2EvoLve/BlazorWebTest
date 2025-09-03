@@ -126,69 +126,25 @@ else
                 <i class="fa fa-gamepad text-accent mr-2"></i>最近玩过的游戏
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                <!-- 游戏卡片1 -->
-                <div class="bg-secondary/30 rounded-lg overflow-hidden shadow-lg hover-scale">
-                    <img src="https://picsum.photos/400/200?random=1" alt="游戏封面" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-white text-lg mb-1">游戏名称</h3>
-                        <p class="text-gray-400 text-sm mb-2">最近玩了 12 小时</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-accent text-sm">上次玩: 2天前</span>
-                            <button
-                                class="bg-accent/20 hover:bg-accent/40 text-accent px-3 py-1 rounded-md text-sm transition-colors duration-300">
-                                查看详情
-                            </button>
+                @foreach (var game in games)
+                {
+                    <!-- 游戏卡片 -->
+                    <div class="bg-secondary/30 rounded-lg overflow-hidden shadow-lg hover-scale">
+                        <img src="https://picsum.photos/400/200?random=1" alt="游戏封面" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-white text-lg mb-1">@game.name</h3>
+                            <p class="text-gray-400 text-sm mb-2">最近玩了 {@game.playtime_2weeks / 60} 小时</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-accent text-sm">总游戏时长 {@game.playtime_foreve / 60}小时</span>
+                                <button
+                                    class="bg-accent/20 hover:bg-accent/40 text-accent px-3 py-1 rounded-md text-sm transition-colors duration-300">
+                                    查看详情
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- 游戏卡片2 -->
-                <div class="bg-secondary/30 rounded-lg overflow-hidden shadow-lg hover-scale">
-                    <img src="https://picsum.photos/400/200?random=2" alt="游戏封面" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-white text-lg mb-1">游戏名称</h3>
-                        <p class="text-gray-400 text-sm mb-2">最近玩了 8 小时</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-accent text-sm">上次玩: 5天前</span>
-                            <button
-                                class="bg-accent/20 hover:bg-accent/40 text-accent px-3 py-1 rounded-md text-sm transition-colors duration-300">
-                                查看详情
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片3 -->
-                <div class="bg-secondary/30 rounded-lg overflow-hidden shadow-lg hover-scale">
-                    <img src="https://picsum.photos/400/200?random=3" alt="游戏封面" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-white text-lg mb-1">游戏名称</h3>
-                        <p class="text-gray-400 text-sm mb-2">最近玩了 3 小时</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-accent text-sm">上次玩: 1周前</span>
-                            <button
-                                class="bg-accent/20 hover:bg-accent/40 text-accent px-3 py-1 rounded-md text-sm transition-colors duration-300">
-                                查看详情
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片4 -->
-                <div class="bg-secondary/30 rounded-lg overflow-hidden shadow-lg hover-scale">
-                    <img src="https://picsum.photos/400/200?random=4" alt="游戏封面" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-white text-lg mb-1">游戏名称</h3>
-                        <p class="text-gray-400 text-sm mb-2">最近玩了 5 小时</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-accent text-sm">上次玩: 2周前</span>
-                            <button
-                                class="bg-accent/20 hover:bg-accent/40 text-accent px-3 py-1 rounded-md text-sm transition-colors duration-300">
-                                查看详情
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                }
+                
             </div>
         </div>
     </main>

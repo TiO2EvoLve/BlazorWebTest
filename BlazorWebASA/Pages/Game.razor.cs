@@ -8,6 +8,7 @@ public class Game_razor: ComponentBase
 {
 
     protected Player? player;
+    protected List<Games>? games = new();
     [Inject]
     private HttpClient Http { get; set; } = default!;
     protected readonly Dictionary<int,string> state= new ()
@@ -28,18 +29,14 @@ public class Game_razor: ComponentBase
             "/.netlify/functions/steam?steamid=76561198325902444"
         );
         player = result?.Response?.Players?.FirstOrDefault();
-        
+        //获取最近游戏信息
+        var gameresult = await Http.GetFromJsonAsync<GameResponse>(
+            "/.netlify/functions/latelygame?steamid=76561198325902444"
+        );
+        games = gameresult?.gameResponse?.games;
     }
 
-    public class SteamResponse
-    {
-        public SteamResponseData Response { get; set; } = new();
-    }
-
-    public class SteamResponseData
-    {
-        public List<Player> Players { get; set; } = new();
-    }
+    
 
     public string GetTime(double time)
     {
