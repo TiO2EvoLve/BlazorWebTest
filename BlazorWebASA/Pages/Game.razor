@@ -135,13 +135,11 @@ else
                             <h3 class="font-bold text-white text-lg mb-1">@game.name</h3>
                             <p class="text-gray-400 text-sm mb-2">最近玩了@(game.playtime_2weeks/60)小时</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-accent text-sm">总游戏时长  <span class="text-red-500">@(game.playtime_forever / 60)</span> 
-                                <span class="text-blue-400">小时</span>
-                                </span>
-                                <button
+                                <span class="text-accent text-sm">总游戏时长  <span class="text-red-500">@(game.playtime_forever / 60)</span> 小时</span>
+                                <a href="https://store.steampowered.com/agecheck/app/@game.appid"
                                     class="bg-accent/20 hover:bg-accent/40 text-accent px-3 py-1 rounded-md text-sm transition-colors duration-300">
                                     查看详情
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -151,11 +149,4 @@ else
         </div>
     </main>
 </div>
-
-}
-
-@code {
-   
-    
-
 }
