@@ -1,0 +1,112 @@
+/* 自定义字体 */
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #4A4A4A; /* sweet-text */
+}
+
+/* 阴影样式 */
+.shadow-soft {
+    box-shadow: 0 4px 16px rgba(255, 166, 201, 0.15);
+}
+
+.shadow-hover {
+    box-shadow: 0 8px 24px rgba(135, 196, 255, 0.2);
+}
+
+.shadow-card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 渐变样式 */
+.card-gradient-blue {
+    background: linear-gradient(135deg, #E0F4FF 0%, #F0E6FF 100%);
+}
+
+.card-gradient-pink {
+    background: linear-gradient(135deg, #FFE6F2 0%, #F0E6FF 100%);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #87C4FF, #FFA6C9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* 标签样式 */
+.tag-item {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 自定义边框颜色类 */
+.border-sweet-border {
+    border-color: #D1E9FF; /* sweet-border */
+}
+
+.border-sweet-borderPink {
+    border-color: #FFD1E3; /* sweet-borderPink */
+}
+
+.border-sweet-purple {
+    border-color: rgba(240, 230, 255, 0.4); /* sweet-purple/40 */
+}
+
+.border-sweet-blue-light {
+    border-color: rgba(224, 244, 255, 0.3); /* sweet-blue/30 */
+}
+
+.border-sweet-pink-light {
+    border-color: rgba(255, 230, 242, 0.3); /* sweet-pink/30 */
+}
+
+/* 背景色类 */
+.bg-sweet-blue-light {
+    background-color: rgba(224, 244, 255, 0.1); /* sweet-blue/10 */
+}
+
+.bg-sweet-pink-light {
+    background-color: rgba(255, 230, 242, 0.1); /* sweet-pink/10 */
+}
+
+.bg-sweet-blue-20 {
+    background-color: rgba(224, 244, 255, 0.2); /* sweet-blue/20 */
+}
+
+.bg-sweet-blue-40 {
+    background-color: rgba(224, 244, 255, 0.4); /* sweet-blue/40 */
+}
+
+.bg-sweet-pink-20 {
+    background-color: rgba(255, 230, 242, 0.2); /* sweet-pink/20 */
+}
+
+.bg-sweet-pink-40 {
+    background-color: rgba(255, 230, 242, 0.4); /* sweet-pink/40 */
+}
+
+.bg-sweet-blue-30 {
+    background-color: rgba(224, 244, 255, 0.3); /* sweet-blue/30 */
+}
+
+.bg-sweet-pink-30 {
+    background-color: rgba(255, 230, 242, 0.3); /* sweet-pink/30 */
+}
+
+/* 文字颜色类 */
+.text-sweet-blueDark {
+    color: #87C4FF; /* sweet-blueDark */
+}
+
+.text-sweet-pinkDark {
+    color: #FFA6C9; /* sweet-pinkDark */
+}
+
+.text-sweet-lightText {
+    color: #7A7A7A; /* sweet-lightText */
+}

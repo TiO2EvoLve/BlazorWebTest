@@ -2,7 +2,7 @@
 
 namespace Web.Pages;
 
-public class Blog_razor: ComponentBase
+public class About_razor: ComponentBase
 {
    
 }

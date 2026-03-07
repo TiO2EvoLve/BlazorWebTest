@@ -1,6 +1,6 @@
 ﻿(function () {
     window.startSakura = function () {
-        const numFlakes = 15; // 花瓣密度
+        const numFlakes = 10; // 花瓣密度
         const flakes = [];
         const body = document.body;
         const canvas = document.createElement("canvas");
