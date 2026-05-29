@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>Web</RootNamespace>
         <PublishTrimmed>true</PublishTrimmed>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,380 +1,470 @@
 @page "/about"
 @inherits About_razor
 
-
 <style>
-    /* 自定义字体 */
+    @@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+
     body {
-        font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-        color: #4A4A4A; /* sweet-text */
-        background:linear-gradient(135deg, rgba(250, 221, 233, 0.4) 20%, rgba(226, 252, 253, 0.4) 70%);
+        font-family: 'Noto Sans SC', sans-serif;
+        background: #f8f5f0;
+        min-height: 100vh;
+        overflow-x: hidden;
     }
 
-    /* 阴影样式 */
-    .shadow-soft {
-        box-shadow: 0 4px 16px rgba(255, 166, 201, 0.15);
+    /* ── 背景浮球 ── */
+    .about-background {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
     }
 
-    .shadow-hover {
-        box-shadow: 0 8px 24px rgba(135, 196, 255, 0.2);
+    .about-ball {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(72px);
+        opacity: 0.35;
+        animation: floatBall 8s ease-in-out infinite alternate;
     }
 
-    .shadow-card {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    @@keyframes floatBall {
+        0%   { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(18px, -22px) scale(1.06); }
     }
 
-    /* 渐变样式 */
-    .card-gradient-blue {
-        background: linear-gradient(135deg, #E0F4FF 0%, #F0E6FF 100%);
+    /* ── 页面布局 ── */
+    .about-wrapper {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 48px 20px 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
     }
 
-    .card-gradient-pink {
-        background: linear-gradient(135deg, #FFE6F2 0%, #F0E6FF 100%);
+    /* ── 通用卡片 ── */
+    .a-card {
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(18px);
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.85);
+        box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+        padding: 28px 32px;
+        transition: transform 0.25s, box-shadow 0.25s;
     }
 
-    .text-gradient {
-        background: linear-gradient(90deg, #87C4FF, #FFA6C9);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+    .a-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.11);
     }
 
-    /* 标签样式 */
-    .tag-item {
-        padding: 0.5rem 1rem;
-        border-radius: 9999px;
-        font-size: 0.875rem;
-        transition: all 0.3s;
+    /* ── Hero 头部卡片 ── */
+    .hero-card {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 28px;
+        flex-wrap: wrap;
     }
 
-    /* 自定义边框颜色类 */
-    .border-sweet-border {
-        border-color: #D1E9FF; /* sweet-border */
+    .hero-avatar {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #ffb347;
+        box-shadow: 0 0 0 6px rgba(255,179,71,0.2);
+        flex-shrink: 0;
     }
 
-    .border-sweet-borderPink {
-        border-color: #FFD1E3; /* sweet-borderPink */
+    .hero-name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #1a1a1a;
+        letter-spacing: -0.5px;
     }
 
-    .border-sweet-purple {
-        border-color: rgba(240, 230, 255, 0.4); /* sweet-purple/40 */
+    .hero-tagline {
+        font-size: 14px;
+        color: #888;
+        margin-top: 4px;
     }
 
-    .border-sweet-blue-light {
-        border-color: rgba(224, 244, 255, 0.3); /* sweet-blue/30 */
+    .hero-badge {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 4px 14px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 500;
+        background: linear-gradient(90deg, #ffb347, #a8e063);
+        color: #fff;
+        letter-spacing: 0.5px;
     }
 
-    .border-sweet-pink-light {
-        border-color: rgba(255, 230, 242, 0.3); /* sweet-pink/30 */
+    /* ── 章节标题 ── */
+    .section-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
-    /* 背景色类 */
-    .bg-sweet-blue-light {
-        background-color: rgba(224, 244, 255, 0.1); /* sweet-blue/10 */
+    .section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, #ffb347 0%, transparent 100%);
+        opacity: 0.5;
     }
 
-    .bg-sweet-pink-light {
-        background-color: rgba(255, 230, 242, 0.1); /* sweet-pink/10 */
+    /* ── 自我介绍文字 ── */
+    .bio-text {
+        font-size: 15px;
+        line-height: 1.9;
+        color: #444;
     }
 
-    .bg-sweet-blue-20 {
-        background-color: rgba(224, 244, 255, 0.2); /* sweet-blue/20 */
+    .bio-text strong {
+        color: #e07b00;
+        font-weight: 600;
     }
 
-    .bg-sweet-blue-40 {
-        background-color: rgba(224, 244, 255, 0.4); /* sweet-blue/40 */
+    /* ── 时间线 ── */
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
     }
 
-    .bg-sweet-pink-20 {
-        background-color: rgba(255, 230, 242, 0.2); /* sweet-pink/20 */
+    .tl-item {
+        display: flex;
+        gap: 16px;
+        position: relative;
     }
 
-    .bg-sweet-pink-40 {
-        background-color: rgba(255, 230, 242, 0.4); /* sweet-pink/40 */
+    .tl-item:not(:last-child) .tl-line {
+        position: absolute;
+        left: 11px;
+        top: 24px;
+        bottom: -16px;
+        width: 2px;
+        background: linear-gradient(180deg, #ffb347 0%, #a8e063 100%);
+        opacity: 0.4;
     }
 
-    .bg-sweet-blue-30 {
-        background-color: rgba(224, 244, 255, 0.3); /* sweet-blue/30 */
+    .tl-dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffb347, #a8e063);
+        flex-shrink: 0;
+        margin-top: 2px;
+        box-shadow: 0 0 0 4px rgba(255,179,71,0.15);
     }
 
-    .bg-sweet-pink-30 {
-        background-color: rgba(255, 230, 242, 0.3); /* sweet-pink/30 */
+    .tl-content {
+        padding-bottom: 24px;
+        flex: 1;
     }
 
-    /* 文字颜色类 */
-    .text-sweet-blueDark {
-        color: #87C4FF; /* sweet-blueDark */
+    .tl-year {
+        font-size: 12px;
+        color: #aaa;
+        font-weight: 500;
+        margin-bottom: 2px;
     }
 
-    .text-sweet-pinkDark {
-        color: #FFA6C9; /* sweet-pinkDark */
+    .tl-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #222;
     }
 
-    .text-sweet-lightText {
-        color: #7A7A7A; /* sweet-lightText */
+    .tl-desc {
+        font-size: 13px;
+        color: #666;
+        margin-top: 2px;
+        line-height: 1.6;
+    }
+
+    /* ── 技能标签 ── */
+    .tag-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 4px;
+    }
+
+    .tag {
+        padding: 5px 16px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: default;
+        transition: transform 0.15s;
+        user-select: none;
+    }
+
+    .tag:hover {
+        transform: scale(1.06);
+    }
+
+    .tag-orange  { background: #fff3e0; color: #e07b00; border: 1px solid #ffd699; }
+    .tag-green   { background: #f0fce8; color: #52a018; border: 1px solid #b8e88a; }
+    .tag-blue    { background: #e8f4ff; color: #1a7fce; border: 1px solid #9ecfee; }
+    .tag-pink    { background: #fff0f5; color: #d94f7a; border: 1px solid #f9aec9; }
+    .tag-purple  { background: #f3eeff; color: #7b4fce; border: 1px solid #c9aaf9; }
+
+    /* ── 兴趣爱好网格 ── */
+    .hobby-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 14px;
+        margin-top: 4px;
+    }
+
+    .hobby-item {
+        background: rgba(255,255,255,0.6);
+        border: 1px solid rgba(255,179,71,0.25);
+        border-radius: 14px;
+        padding: 16px 10px;
+        text-align: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .hobby-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(255,179,71,0.18);
+    }
+
+    .hobby-icon {
+        font-size: 28px;
+        margin-bottom: 6px;
+    }
+
+    .hobby-label {
+        font-size: 12px;
+        color: #666;
+        font-weight: 500;
+    }
+
+    /* ── 目标/座右铭卡片 ── */
+    .motto-card {
+        background: linear-gradient(135deg, rgba(255,179,71,0.18) 0%, rgba(168,224,99,0.18) 100%);
+        border: 1px solid rgba(255,179,71,0.35);
+        border-radius: 20px;
+        padding: 28px 32px;
+        text-align: center;
+    }
+
+    .motto-quote {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #c96b00;
+        line-height: 1.6;
+        position: relative;
+    }
+
+    .motto-quote::before {
+        content: '"';
+        font-size: 60px;
+        color: #ffb347;
+        opacity: 0.3;
+        position: absolute;
+        top: -18px;
+        left: -10px;
+        font-family: Georgia, serif;
+        line-height: 1;
+    }
+
+    .motto-sub {
+        font-size: 13px;
+        color: #999;
+        margin-top: 8px;
+    }
+
+    /* ── 响应式 ── */
+    @@media (max-width: 600px) {
+        .hero-card { flex-direction: column; text-align: center; }
+        .a-card { padding: 22px 18px; }
     }
 </style>
 
-<body class="bg-gray-50 min-h-screen">
-    <main class="container mx-auto px-4 py-16 md:py-20 max-w-6xl">
-        <!-- 页面标题 -->
-        <div class="text-center mb-16 md:mb-20">
-            <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold text-gradient mb-6">关于我</h1>
-            <div class="w-24 h-1 bg-[#FFA6C9] mx-auto rounded-full"></div>
+<!-- 背景浮球（换色系） -->
+<div class="about-background">
+    <div class="about-ball" style="width:220px;height:220px;background:#ffb347;top:8%;left:10%;animation-delay:0s;"></div>
+    <div class="about-ball" style="width:280px;height:280px;background:#a8e063;top:40%;left:65%;animation-delay:2s;"></div>
+    <div class="about-ball" style="width:200px;height:200px;background:#4fc3f7;top:72%;left:20%;animation-delay:4s;"></div>
+    <div class="about-ball" style="width:240px;height:240px;background:#ffd54f;top:85%;left:75%;animation-delay:1s;"></div>
+</div>
+
+<div class="about-wrapper">
+
+    <!-- Hero -->
+    <div class="a-card hero-card">
+        <img src="./images/logo.png" alt="Avatar" class="hero-avatar" />
+        <div>
+            <div class="hero-name">TiO2 EvoLve</div>
+            <div class="hero-tagline">游戏开发者 · 独立创作者 · 全栈探索者</div>
+            <span class="hero-badge">✦ 正在成长中</span>
         </div>
+    </div>
 
-        <!-- 核心内容区 -->
-        <div class="space-y-16 md:space-y-20">
-            <!-- 第一部分：个人简介 -->
-            <section class="w-full">
-                <div class="bg-white rounded-2xl shadow-card p-8 md:p-10 transition-all duration-300 hover:shadow-hover border-2 border-sweet-border">
-                    <div class="flex flex-col items-center mb-8">
-                        <div class="w-24 h-24 card-gradient-blue rounded-full flex items-center justify-center mb-6">
-                            <!-- Font Awesome用户图标 -->
-                            <i class="fa-solid fa-mars text-4xl text-sweet-blueDark"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold mb-3">个人简介</h2>
-                        <div class="w-20 h-0.5 bg-[#E0F4FF]"></div>
-                    </div>
-                    
-                    <div class="max-w-3xl mx-auto space-y-5 text-sweet-lightText text-lg leading-relaxed">
-                        <p>我是一个热爱和平的人，喜欢用温柔的视角看待世界，热衷于探索一切美好有趣的事物。</p>
-                        <p>这个页面是我的简要介绍，希望能帮助你快速了解我。</p>
-                        <p>我是一个完美主义者，在技术领域总是喜欢追求最优解。</p>
-                        <p></p>
-                    </div>
+    <!-- 自我介绍 -->
+    <div class="a-card">
+        <div class="section-title">👋 关于我</div>
+        <p class="bio-text">
+            你好！我是 <strong>TiO2 EvoLve</strong>，一名来自 <strong>中国·山东·济南</strong> 的独立开发者。<br/><br/>
+            我热衷于探索<strong>游戏开发</strong>与<strong>全栈技术</strong>的交叉地带，尤其对
+            <strong>S&amp;Box（Source 2 引擎）</strong>有着浓厚兴趣。
+            用 <strong>C#</strong> 写逻辑、用 <strong>Razor</strong> 搭页面、用代码构建我想象中的世界——
+            这是我每天最享受的事情之一。<br/><br/>
+            除了折腾技术，我也会在 <strong>Bilibili</strong> 分享开发过程中的心得与踩坑记录，
+            希望能和更多有趣的人一起成长。
+        </p>
+    </div>
 
-                    <!-- 联系方式 -->
-                    <div class="mt-10 max-w-3xl mx-auto">
-                        <h3 class="text-lg font-semibold mb-6 text-center">联系方式</h3>
-                        <div class="flex justify-center gap-8 text-2xl">
-                            <!-- Font Awesome社交图标 -->
-                            <a href="#" class="text-sweet-blueDark hover:text-sweet-pinkDark transition-colors hover:scale-110">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="#" class="text-sweet-blueDark hover:text-sweet-pinkDark transition-colors hover:scale-110">
-                                <i class="fa-brands fa-weixin"></i>
-                            </a>
-                            <a href="#" class="text-sweet-blueDark hover:text-sweet-pinkDark transition-colors hover:scale-110">
-                                <i class="fa-brands fa-qq"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 第二部分：兴趣爱好 -->
-            <section class="w-full">
-                <div class="bg-white rounded-2xl shadow-card p-8 md:p-10 transition-all duration-300 hover:shadow-hover border-2 border-sweet-borderPink">
-                    <div class="flex flex-col items-center mb-8">
-                        <div class="w-24 h-24 card-gradient-pink rounded-full flex items-center justify-center mb-6">
-                            <!-- Font Awesome爱心图标 -->
-                            <i class="fa-solid fa-heart text-4xl text-sweet-pinkDark"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold mb-3">兴趣爱好</h2>
-                        <div class="w-20 h-0.5 bg-[#FFE6F2]"></div>
-                    </div>
-                    
-                    <!-- 兴趣爱好 - 标签云（全部使用Font Awesome图标） -->
-                    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
-                        <div class="tag-item bg-sweet-blue-20 hover:bg-sweet-blue-40 text-sweet-blueDark border border-sweet-blue-light">
-                            <i class="fa-solid fa-book-open"></i>
-                            <span>计算机应用、游戏开发</span>
-                        </div>
-                        <div class="tag-item bg-sweet-pink-20 hover:bg-sweet-pink-40 text-sweet-pinkDark border border-sweet-pink-light">
-                            <i class="fa-solid fa-paintbrush"></i>
-                            <span>生存游戏、fps游戏</span>
-                        </div>
-                        <div class="tag-item bg-sweet-blue-20 hover:bg-sweet-blue-40 text-sweet-blueDark border border-sweet-blue-light">
-                            <i class="fa-solid fa-music"></i>
-                            <span>三维场景建模</span>
-                        </div>
-                        <div class="tag-item bg-sweet-pink-20 hover:bg-sweet-pink-40 text-sweet-pinkDark border border-sweet-pink-light">
-                            <i class="fa-solid fa-camera-retro"></i>
-                            <span>国际政事要闻</span>
-                        </div>
-                        <div class="tag-item bg-sweet-blue-20 hover:bg-sweet-blue-40 text-sweet-blueDark border border-sweet-blue-light">
-                            <i class="fa-solid fa-birthday-cake"></i>
-                            <span>日式街道氛围</span>
-                        </div>
-                        <div class="tag-item bg-sweet-pink-20 hover:bg-sweet-pink-40 text-sweet-pinkDark border border-sweet-pink-light">
-                            <i class="fa-solid fa-tree"></i>
-                            <span>轻百动漫</span>
-                        </div>
-                    </div>
-                </div>
-                </section>
-
-            <!-- 第三部分：讨厌的事 -->
-            <section class="w-full">
-                <div class="bg-white rounded-2xl shadow-card p-8 md:p-10 transition-all duration-300 hover:shadow-hover border-2">
-                    <div class="flex flex-col items-center mb-8">
-                        <div class="w-24 h-24 card-gradient-blue rounded-full flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-heart-crack text-4xl text-sweet-pinkDark"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold mb-3">讨厌的事</h2>
-                        <div class="w-20 h-0.5 bg-[#FFE6F2]"></div>
-                    </div>
-                    <!-- 讨厌的事 - 标签云 -->
-                    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
-                        <div class="tag-item bg-sweet-blue-20 hover:bg-sweet-blue-40 text-sweet-blueDark border border-sweet-blue-light">
-                            <i class="fa-solid fa-book-open"></i>
-                            <span>负能量的事</span>
-                        </div>
-                        <div class="tag-item bg-sweet-pink-20 hover:bg-sweet-pink-40 text-sweet-pinkDark border border-sweet-pink-light">
-                            <i class="fa-solid fa-paintbrush"></i>
-                            <span>粗鲁、无正义感的人</span>
-                        </div>
-                        <div class="tag-item bg-sweet-blue-20 hover:bg-sweet-blue-40 text-sweet-blueDark border border-sweet-blue-light">
-                            <i class="fa-solid fa-music"></i>
-                            <span>在众目睽睽下</span>
-                        </div>
-                        <div class="tag-item bg-sweet-pink-20 hover:bg-sweet-pink-40 text-sweet-pinkDark border border-sweet-pink-light">
-                            <i class="fa-solid fa-camera-retro"></i>
-                            <span>传统思想糟粕</span>
-                        </div>
-                        <div class="tag-item bg-sweet-blue-20 hover:bg-sweet-blue-40 text-sweet-blueDark border border-sweet-blue-light">
-                            <i class="fa-solid fa-birthday-cake"></i>
-                            <span>孤独</span>
-                        </div>
-                        <div class="tag-item bg-sweet-pink-20 hover:bg-sweet-pink-40 text-sweet-pinkDark border border-sweet-pink-light">
-                            <i class="fa-solid fa-tree"></i>
-                            <span>中国式教育</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- 第四部分：能力认知 -->
-            <section class="w-full">
-                <div class="bg-white rounded-2xl shadow-card p-8 md:p-10 transition-all duration-300 hover:shadow-hover border-2 border-sweet-purple">
-                    <div class="flex flex-col items-center mb-8">
-                        <div class="w-24 h-24 card-gradient-blue rounded-full flex items-center justify-center mb-6">
-                            <!-- Font Awesome星星图标 -->
-                            <i class="fa-solid fa-star text-4xl text-sweet-blueDark"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold mb-3">能力认知</h2>
-                        <div class="w-20 h-0.5 bg-[#F0E6FF]"></div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-                        <!-- 擅长的事 -->
-                        <div>
-                            <h3 class="font-semibold text-sweet-blueDark mb-6 text-xl flex items-center gap-3 justify-center md:justify-start">
-                                <i class="fa-solid fa-check-circle text-xl"></i>
-                                <span>我所擅长的</span>
-                            </h3>
-                            <div class="space-y-4">
-                                <div class="bg-sweet-blue-light p-5 rounded-xl hover:shadow-md transition-all duration-300 border border-sweet-blue-light">
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-10 h-10 bg-sweet-blue-30 rounded-full flex items-center justify-center text-sweet-blueDark">
-                                            <i class="fa-solid fa-comments"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium">计算机开发</h4>
-                                            <p class="text-sm text-sweet-lightText mt-1">游戏/桌面/web开发</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-sweet-blue-light p-5 rounded-xl hover:shadow-md transition-all duration-300 border border-sweet-blue-light">
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-10 h-10 bg-sweet-blue-30 rounded-full flex items-center justify-center text-sweet-blueDark">
-                                            <i class="fa-solid fa-hand-sparkles"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium">场景编辑</h4>
-                                            <p class="text-sm text-sweet-lightText mt-1">制作三维场景、模型</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-sweet-blue-light p-5 rounded-xl hover:shadow-md transition-all duration-300 border border-sweet-blue-light">
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-10 h-10 bg-sweet-blue-30 rounded-full flex items-center justify-center text-sweet-blueDark">
-                                            <i class="fa-solid fa-camera"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium">思考构思</h4>
-                                            <p class="text-sm text-sweet-lightText mt-1">想象与构思</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 不擅长的事 -->
-                        <div>
-                            <h3 class="font-semibold text-sweet-pinkDark mb-6 text-xl flex items-center gap-3 justify-center md:justify-start">
-                                <i class="fa-solid fa-times-circle text-xl"></i>
-                                <span>我不擅长的</span>
-                            </h3>
-                            <div class="space-y-4">
-                                <div class="bg-sweet-pink-light p-5 rounded-xl hover:shadow-md transition-all duration-300 border border-sweet-pink-light">
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-10 h-10 bg-sweet-pink-30 rounded-full flex items-center justify-center text-sweet-pinkDark">
-                                            <i class="fa-solid fa-map-location-dot"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium">语言表达</h4>
-                                            <p class="text-sm text-sweet-lightText mt-1">容易心里明白，但无法用语言表达出来</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-sweet-pink-light p-5 rounded-xl hover:shadow-md transition-all duration-300 border border-sweet-pink-light">
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-10 h-10 bg-sweet-pink-30 rounded-full flex items-center justify-center text-sweet-pinkDark">
-                                            <i class="fa-solid fa-person-running"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium">体育运动</h4>
-                                            <p class="text-sm text-sweet-lightText mt-1">不擅长一切体育活动</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-sweet-pink-light p-5 rounded-xl hover:shadow-md transition-all duration-300 border border-sweet-pink-light">
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-10 h-10 bg-sweet-pink-30 rounded-full flex items-center justify-center text-sweet-pinkDark">
-                                            <i class="fa-solid fa-user-group"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium">主动社交</h4>
-                                            <p class="text-sm text-sweet-lightText mt-1">想与人交流但不会主动说话</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 底部寄语 -->
-            <section class="w-full">
-                <div class="max-w-3xl mx-auto bg-white rounded-2xl p-8 border-2 border-[rgba(209,233,255,0.5)] shadow-card text-center">
-                    <p class="text-sweet-lightText italic text-lg leading-relaxed">
-                        每个人都有自己的节奏和闪光点，接纳自己的全部，
-                        认真生活，就是最美好的状态。
-                    </p>
-                </div>
-            </section>
+    <!-- 技术栈 -->
+    <div class="a-card">
+        <div class="section-title">🛠️ 技术栈</div>
+        <div class="tag-wrap">
+            <span class="tag tag-orange">C#</span>
+            <span class="tag tag-orange">.NET / Blazor</span>
+            <span class="tag tag-green">S&amp;Box / Source 2</span>
+            <span class="tag tag-green">Razor Pages</span>
+            <span class="tag tag-blue">HTML / CSS</span>
+            <span class="tag tag-blue">Tailwind CSS</span>
+            <span class="tag tag-blue">JavaScript</span>
+            <span class="tag tag-pink">Git / GitHub</span>
+            <span class="tag tag-purple">游戏逻辑设计</span>
+            <span class="tag tag-purple">独立游戏开发</span>
         </div>
-    </main>
+    </div>
 
-    <!-- 页脚 -->
-    <footer class="mt-20 py-10 bg-white border-t-2 border-[rgba(209,233,255,0.3)]">
-        <div class="container mx-auto px-4 text-center text-sweet-lightText max-w-6xl">
-            <p class="text-base">© 2025 Ti02 EvoLve 版权所有</p>
-            <p class="mt-3 text-sm">用心记录生活，用爱感受世界</p>
+    <!-- 成长时间线 -->
+    <div class="a-card">
+        <div class="section-title">📅 成长历程</div>
+        <div class="timeline">
+            <div class="tl-item">
+                <div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-content">
+                    <div class="tl-year">早期</div>
+                    <div class="tl-title">初识编程</div>
+                    <div class="tl-desc">从 C# 入门，感受到写代码"让想法变成现实"的奇妙魅力。</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-content">
+                    <div class="tl-year">成长期</div>
+                    <div class="tl-title">接触游戏开发</div>
+                    <div class="tl-desc">开始研究 Garry's Mod 二次开发，逐渐转向 S&amp;Box 与 Source 2 生态。</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-content">
+                    <div class="tl-year">近期</div>
+                    <div class="tl-title">全栈拓展</div>
+                    <div class="tl-desc">学习 Blazor / ASP.NET，搭建个人网站，尝试将游戏思维融入 Web 开发。</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div>
+                    <div class="tl-dot"></div>
+                </div>
+                <div class="tl-content">
+                    <div class="tl-year">现在</div>
+                    <div class="tl-title">持续探索中 🚀</div>
+                    <div class="tl-desc">每天学一点，做一点，记录一点。</div>
+                </div>
+            </div>
         </div>
-    </footer>
-    
-</body>
+    </div>
+
+    <!-- 兴趣爱好 -->
+    <div class="a-card">
+        <div class="section-title">🎮 兴趣爱好</div>
+        <div class="hobby-grid">
+            <div class="hobby-item">
+                <div class="hobby-icon">🎮</div>
+                <div class="hobby-label">游戏开发</div>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-icon">🎲</div>
+                <div class="hobby-label">玩游戏</div>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-icon">📺</div>
+                <div class="hobby-label">Bilibili 创作</div>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-icon">💻</div>
+                <div class="hobby-label">折腾技术</div>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-icon">🔧</div>
+                <div class="hobby-label">硬件组装</div>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-icon">📖</div>
+                <div class="hobby-label">看技术博客</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 座右铭 -->
+    <div class="motto-card">
+        <div class="motto-quote">写代码，不只是写代码——<br/>是在用逻辑构建另一个宇宙。</div>
+        <div class="motto-sub">— TiO2 EvoLve 的开发哲学</div>
+    </div>
+
+    <!-- 联系方式 -->
+    <div class="a-card">
+        <div class="section-title">📬 联系我</div>
+        <div class="tag-wrap">
+            <a href="mailto:3290158038@qq.com"
+               class="tag tag-orange" style="text-decoration:none;">
+                📧 3290158038@qq.com
+            </a>
+            <a href="https://space.bilibili.com/59422806" target="_blank"
+               class="tag tag-blue" style="text-decoration:none;">
+                📺 Bilibili
+            </a>
+            <a href="https://github.com/TiO2EvoLve" target="_blank"
+               class="tag tag-green" style="text-decoration:none;">
+                🐱 GitHub
+            </a>
+            <a href="https://steamcommunity.com/id/TiO2EvoLve" target="_blank"
+               class="tag tag-purple" style="text-decoration:none;">
+                🎮 Steam
+            </a>
+        </div>
+    </div>
+
+</div>
 
 
-@code {
-
- 
-}
-        
 
