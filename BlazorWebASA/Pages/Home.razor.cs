@@ -23,12 +23,12 @@ public class Home_razor : ComponentBase
     
     protected readonly List<Skill> Skills =
     [
-        new() { Name = "UE5", Class = "pink", Img = "./images/Icon/UE5.png", Progress = 80 },
-        new() { Name = "C#", Class = "green", Img = "./images/Icon/C2.png", Progress = 95 },
-        new() { Name = "Blender", Class = "blue", Img = "./images/Icon/Blender.png", Progress = 60 },
+        new() { Name = "UE5", Class = "pink", Img = "./images/Icon/UE5.png", Progress = 90 },
+        new() { Name = "C#", Class = "green", Img = "./images/Icon/C2.png", Progress = 80 },
+        new() { Name = "Blender", Class = "blue", Img = "./images/Icon/Blender.png", Progress = 70 },
         new() { Name = "Python", Class = "purply", Img = "./images/Icon/python.png", Progress = 40 },
         new() { Name = "Pt", Class = "orange", Img = "./images/Icon/pt.png", Progress = 20 },
-        new() { Name = "S&box", Class = "yellow", Img = "./images/Icon/sbox.png", Progress = 50 },
+        new() { Name = "S&box", Class = "yellow", Img = "./images/Icon/sbox.png", Progress = 0 },
     ];
 
 
