@@ -6,7 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TiO2 EvoLve</title>
     <base href="/" />
+    <script>
+        // 等待 DOM 加载完成
+        window.addEventListener('DOMContentLoaded', function () {
+            // 监听 Blazor 的资源加载进度事件
+            Blazor.start().then(function () {
+                // Blazor 启动后的逻辑可以放这里
+            });
+        });
 
+        // 方法1：使用 Blazor 提供的加载资源进度回调（推荐）
+        window.__blazorLoadProgress = function (progress) {
+            const percent = Math.round(progress * 100);
+            const percentText = document.getElementById('loading-percentage-text');
+            if (percentText) {
+                percentText.textContent = `${percent}%`;
+            }
+        };
+    </script>
+    
 <!--<link href="_content/BootstrapBlazor.FontAwesome/css/font-awesome.min.css" rel="stylesheet">-->
     <link href="_content/BootstrapBlazor/css/bootstrap.blazor.bundle.min.css" rel="stylesheet">
     <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
@@ -20,7 +38,8 @@
 
 <body>
     <div id="app">
-        <div class="loading-text">首次加载较慢,请稍后...</div>
+        <div class="loading-text">首次加载较慢,请稍后...
+            <div id="loading-percentage-text"></div></div>
     </div>
 
     <div id="blazor-error-ui">
